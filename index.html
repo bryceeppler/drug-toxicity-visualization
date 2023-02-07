@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+      .line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 2px;
+      }
+
+      .node {
+        border: solid 1px black;
+        font: 10px sans-serif;
+        line-height: 12px;
+        overflow: hidden;
+        position: absolute;
+        text-indent: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <svg class="linechart" width="960" height="500"></svg>
+    </div>
+    <!-- Line Chart -->
+    <script>
+      var svg = d3.select(".linechart"),
+        margin = { top: 20, right: 20, bottom: 30, left: 50 },
+        width = +svg.attr("width") - margin.left - margin.right,
+        height = +svg.attr("height") - margin.top - margin.bottom,
+        g = svg
+          .append("g")
+          .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      const parseTime = d3.timeParse("%d-%b-%y");
+
+      const x = d3.scaleTime().rangeRound([0, width]);
+      const y = d3.scaleLinear().rangeRound([height, 0]);
+
+      const line = d3
+        .line()
+        .x(function (d) {
+          return x(d.date);
+        })
+        .y(function (d) {
+          return y(d.deaths);
+        });
+
+      const data = [
+        { date: "1-Jan-17", deaths: 24 },
+        { date: "1-Feb-17", deaths: 29 },
+        { date: "1-Mar-17", deaths: 36 },
+        { date: "1-Apr-17", deaths: 48 },
+        { date: "1-May-17", deaths: 77 },
+        { date: "1-Jun-17", deaths: 74 },
+        { date: "1-Jul-17", deaths: 90 },
+        { date: "1-Aug-17", deaths: 94 },
+        { date: "1-Sep-17", deaths: 98 },
+        { date: "1-Oct-17", deaths: 104 },
+        { date: "1-Nov-17", deaths: 110 },
+        { date: "1-Dec-17", deaths: 119 },
+        { date: "1-Jan-18", deaths: 116 },
+        { date: "1-Feb-18", deaths: 119 },
+        { date: "1-Mar-18", deaths: 132 },
+      ];
+
+      data.forEach(function (d) {
+        d.date = parseTime(d.date);
+        d.deaths = +d.deaths;
+      });
+
+      x.domain(
+        d3.extent(data, function (d) {
+          return d.date;
+        })
+      );
+      y.domain([
+        0,
+        d3.max(data, function (d) {
+          return d.deaths;
+        }),
+      ]);
+
+      g.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(x).ticks(5))
+        .select(".domain")
+        .remove();
+
+      // create an alternating background color along the x-axis for each month
+      g.selectAll("rect")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("x", function (d) {
+          return x(d.date);
+        })
+        .attr("y", 0)
+        .attr("width", width / data.length)
+        .attr("height", height)
+        .attr("fill", function (d, i) {
+          return i % 2 == 0 ? "#7CDF6C" : "#FF2E00";
+        })
+        .attr("opacity", 0.2);
+
+      g.append("g")
+        .call(d3.axisLeft(y))
+        .append("text")
+        .attr("fill", "#000")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", "0.71em")
+        .attr("text-anchor", "end")
+        .text("Illicit Drug Deaths");
+
+      g.append("path")
+        .datum(data)
+        .attr("fill", "none")
+        .attr("stroke", "steelblue")
+        .attr("stroke-linejoin", "round")
+        .attr("stroke-linecap", "round")
+        .attr("stroke-width", 1.5)
+        .attr("d", line);
+    </script>
+    <!-- Treemap -->
+    <script>
+      var treemapData = {
+        name: "root",
+        children: [
+          { name: "Victoria", value: 100 },
+          { name: "Vancouver", value: 323 },
+          { name: "Nanaimo", value: 54 },
+          { name: "Prince George", value: 46 },
+        ],
+      };
+
+      var svg = d3
+        .select("body")
+        .append("svg")
+        .attr("width", 500)
+        .attr("height", 500);
+
+      var treemap = d3.treemap().size([500, 500]).padding(1);
+
+      var root = d3
+        .hierarchy(treemapData)
+        .sum(function (d) {
+          return d.value;
+        })
+        .sort(function (a, b) {
+          return b.value - a.value;
+        });
+
+      treemap(root);
+
+      var node = svg
+        .selectAll(".node")
+        .data(root.leaves())
+        .enter()
+        .append("rect")
+        .attr("class", "node")
+        .attr("x", function (d) {
+          return d.x0;
+        })
+        .attr("y", function (d) {
+          return d.y0;
+        })
+        .attr("width", function (d) {
+          return d.x1 - d.x0;
+        })
+        .attr("height", function (d) {
+          return d.y1 - d.y0;
+        })
+        .style("fill", function (d) {
+          return "lightgray";
+        });
+    </script>
+  </body>
+</html>
