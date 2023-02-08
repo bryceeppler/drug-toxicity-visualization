@@ -362,7 +362,7 @@
       var mouseover = function (event, d, i) {
         // Tooltip.style("opacity", 1);
         // change cirlce color to green
-        d3.select(this).style("fill", "green");
+        d3.select(this).style("opacity", 1).style("fill", "#FF7A7A").style("stroke", "black").style("stroke-width", 1);
       };
       var mousemove = function (event, d) {
         Tooltip.html(
@@ -372,7 +372,7 @@
           .style("top", event.pageY + "px");
       };
       var mouseleave = function (d) {
-        d3.select(this).style("fill", "#FF7A7A");
+        d3.select(this).style("fill", "#FF7A7A").style("opacity", 0.5).style("stroke", "#FF7A7A");
         div.
           style("opacity", 0);
       };
