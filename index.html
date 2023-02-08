@@ -18,7 +18,7 @@
         text-indent: 2px;
       }
       .vis-container {
-        width: 600px;
+        width: auto;
         padding: 5px;
         background-color: white;
         border-radius: 5px;
@@ -43,10 +43,10 @@
         pointer-events: none;
       }
 
-      .circle{
+      .circle {
         opacity: 0.5;
       }
-/* 
+      /* 
       .circle:hover{
         stroke: red;
         stroke-width: 6px;
@@ -73,7 +73,29 @@
       </div>
       <div class="vis-container">
         <h3>Bubblemap</h3>
-        <svg class="bubblemap" width="560" height="800"></svg>
+        <!-- scrollbar timeline for selecting the year -->
+        <div
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <div id="year">2012</div>
+
+          <input
+            type="range"
+            min="2000"
+            max="2018"
+            value="2000"
+            class="slider"
+            id="myRange"
+          />
+          <!-- label -->
+          <div id="year">2022</div>
+        </div>
+        <svg class="bubblemap" width="990" height="800"></svg>
       </div>
     </div>
     <!-- Line Chart -->
@@ -236,8 +258,9 @@
 
       var projection = d3
         .geoMercator()
-        .center([-122.0656444, 51.5])
-        .scale(4500)
+        // center in middle of canada
+        .center([-98.5, 62])
+        .scale(600)
         .translate([svg.attr("width") / 2, svg.attr("height") / 2])
         .precision(0.7);
 
@@ -362,19 +385,23 @@
       var mouseover = function (event, d, i) {
         // Tooltip.style("opacity", 1);
         // change cirlce color to green
-        d3.select(this).style("opacity", 1).style("fill", "#FF7A7A").style("stroke", "black").style("stroke-width", 1);
+        d3.select(this)
+          .style("opacity", 1)
+          .style("fill", "#FF7A7A")
+          .style("stroke", "black")
+          .style("stroke-width", 1);
       };
       var mousemove = function (event, d) {
-        Tooltip.html(
-          d.city + "<br>" + d.value 
-        )
+        Tooltip.html(d.city + "<br>" + d.value)
           .style("left", event.pageX + 10 + "px")
           .style("top", event.pageY + "px");
       };
       var mouseleave = function (d) {
-        d3.select(this).style("fill", "#FF7A7A").style("opacity", 0.5).style("stroke", "#FF7A7A");
-        div.
-          style("opacity", 0);
+        d3.select(this)
+          .style("fill", "#FF7A7A")
+          .style("opacity", 0.5)
+          .style("stroke", "#FF7A7A");
+        div.style("opacity", 0);
       };
 
       // Draw the markers
@@ -396,14 +423,15 @@
         .style("fill", "#FF7A7A")
         .style("stroke", "#FF7A7A")
         .on("mouseover", mouseover)
-        .on("mouseleave", mouseleave)
+        .on("mouseleave", mouseleave);
 
-        
-      var div = d3.select("body").append("div")
+      var div = d3
+        .select("body")
+        .append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);
 
-        svg.on("mousemove", function (event, d, i) {
+      svg.on("mousemove", function (event, d, i) {
         var m = d3.pointer(event, this);
         var closest = markers.reduce(function (prev, curr) {
           var currDist =
@@ -415,10 +443,7 @@
           return currDist < prevDist ? curr : prev;
         });
 
-        div
-          .transition()
-          .duration(200)
-          .style("opacity", 0.9);
+        div.transition().duration(200).style("opacity", 0.9);
         div
           .html("City: " + closest.city + "<br>" + "Value: " + closest.value)
           .style("left", event.pageX + "px")
@@ -426,10 +451,7 @@
       });
 
       svg.on("mouseout", function () {
-        div
-          .transition()
-          .duration(500)
-          .style("opacity", 0);
+        div.transition().duration(500).style("opacity", 0);
       });
     </script>
   </body>
