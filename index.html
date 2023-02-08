@@ -2,8 +2,6 @@
 <html>
   <head>
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <!-- <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script> -->
-
     <script src="https://unpkg.com/topojson@3"></script>
     <style>
       .line {
@@ -31,10 +29,11 @@
         justify-content: center;
         align-items: center;
       }
+
       div.tooltip {
         position: absolute;
         text-align: center;
-        width: 60px;
+        width: 120px;
         height: 28px;
         padding: 2px;
         font: 12px sans-serif;
@@ -42,6 +41,16 @@
         border: 0px;
         border-radius: 8px;
         pointer-events: none;
+      }
+
+      .circle{
+        opacity: 0.5;
+      }
+
+      .circle:hover{
+        stroke: red;
+        stroke-width: 6px;
+        opacity: 1;
       }
     </style>
   </head>
@@ -66,7 +75,6 @@
         <h3>Bubblemap</h3>
         <svg class="bubblemap" width="560" height="800"></svg>
       </div>
-      <!-- <div id="tooltip" style="display: none"></div> -->
     </div>
     <!-- Line Chart -->
     <script>
@@ -317,7 +325,7 @@
           value: 66,
           city: "Maple Ridge",
         },
-        { 
+        {
           // Vernon
           long: -119.2738889,
           lat: 50.2602778,
@@ -330,7 +338,7 @@
           lat: 49.1333333,
           value: 16,
           city: "Mission",
-        }
+        },
       ];
 
       // Draw the map
@@ -346,11 +354,32 @@
           .style("stroke", "black")
           .style("opacity", 0.3);
       });
-      var div = d3
+      // create a tooltip
+      var Tooltip = d3
         .select("body")
         .append("div")
         .attr("class", "tooltip")
-        .style("opacity", 0);
+        .style("opacity", 1)
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px");
+
+      // Three function that change the tooltip when user hover / move / leave a cell
+      var mouseover = function (event, d) {
+        Tooltip.style("opacity", 1);
+      };
+      var mousemove = function (event, d) {
+        Tooltip.html(
+          d.city + "<br>" + d.value 
+        )
+          .style("left", event.pageX + 10 + "px")
+          .style("top", event.pageY + "px");
+      };
+      var mouseleave = function (d) {
+        Tooltip.style("opacity", 0);
+      };
+
       // Draw the markers
       svg
         .selectAll("circle")
@@ -366,19 +395,13 @@
         .attr("r", function (d) {
           return d.value / 10;
         })
-        .style("fill", "#4682B4")
-        .style("stroke", "white")
-        .style("opacity", 0.8)
-        .on("mouseover", function (event, d) {
-          div.transition().duration(200).style("opacity", 0.9);
-          div
-            .html(d.city + "<br/>" + d.value)
-            .style("left", event.pageX + "px")
-            .style("top", event.pageY - 28 + "px");
-        })
-        .on("mouseout", function (d) {
-          div.transition().duration(500).style("opacity", 0);
-        });
+        .attr("class", "circle")
+        .style("fill", "#FF7A7A")
+        .style("stroke", "#FF7A7A")
+        // .style("opacity", 0.5)
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseleave", mouseleave);
     </script>
   </body>
 </html>
