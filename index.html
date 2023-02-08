@@ -253,14 +253,12 @@
     <script>
       var svg = d3.select(".bubblemap");
 
-      var vancouver = [49.2827291, -123.1207375];
-      var victoria = [48.4284207, -123.3656444];
-
       var projection = d3
         .geoMercator()
-        // center in vancouver 
-        .center([-123.1, 49.3])
-        .scale(1000)
+        // center on middle of canada
+        .center([-98.5, 61.5])
+        .scale(600)
+
         .translate([svg.attr("width") / 2, svg.attr("height") / 2])
         .precision(0.7);
 
@@ -366,48 +364,27 @@
       ];
 
       // Draw the map
-      d3.json("https://raw.githubusercontent.com/codeforgermany/click_that_hood/main/public/data/canada.geojson").then(function (data) {
-        // {"type":"FeatureCollection","features":[
-// {"type":"Feature","id":"CAN","properties":{"name":"Canada"},"geometry":{"type":"MultiPolygon","coordinates":[[[[-63.6645,46.55001],[-62.9393,46.41587],[-62.01208,46.44314],[-62.50391,46.03339],[-62.87433,45.96818],
-        svg
+      d3.json(
+        "https://raw.githubusercontent.com/codeforgermany/click_that_hood/main/public/data/canada.geojson"
+      ).then(function (data) {
+        var provinces = svg
           .selectAll("path")
           .data(data.features)
           .enter()
           .append("path")
           .attr("d", d3.geoPath().projection(projection))
           .style("stroke", "black")
-          .style("stroke-width", function (d) {
-            if (d.properties.name == "British Columbia") {
-              return 1;
-            } else {
-              return 0.5;
-            }
-          })
+          .style("stroke-width", 0.3)
           .style("fill", "none")
-          // make province of bc filled with orange
-          .style("stroke", function (d) {
-            if (d.properties.name == "British Columbia") {
-              return "black";
-            } else {
-              return "gray";
-            }
-          });
-          ;
       });
+
       // Three function that change the tooltip when user hover / move / leave a cell
       var mouseover = function (event, d, i) {
-        // Tooltip.style("opacity", 1);
-        // change cirlce color to green
         d3.select(this)
           .style("opacity", 1)
           .style("fill", "#FF7A7A")
           .style("stroke", "black")
           .style("stroke-width", 1);
-      };
-      var mousemove = function (event, d) {
-        Tooltip.html(d.city + "<br>" + d.value)
-          .style("left", event.pageX + 10 + "px")
-          .style("top", event.pageY + "px");
       };
       var mouseleave = function (d) {
         d3.select(this)
@@ -466,6 +443,7 @@
       svg.on("mouseout", function () {
         div.transition().duration(500).style("opacity", 0);
       });
+      
     </script>
   </body>
 </html>

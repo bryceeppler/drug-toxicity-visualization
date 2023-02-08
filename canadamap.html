@@ -30,7 +30,7 @@ var g = svg.append("g");
 
 // load and display the World
 // https://d3js.org/world-110m.v1.json
-d3.json("https://d3js.org/world-110m.v1.json").then(function(topology) {
+d3.json("https://raw.githubusercontent.com/codeforgermany/click_that_hood/main/public/data/canada.geojson").then(function(topology) {
 
     g.selectAll("path")
        .data(topojson.feature(topology, topology.objects.countries).features)
