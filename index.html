@@ -354,16 +354,6 @@
           .style("stroke", "black")
           .style("opacity", 0.3);
       });
-      // create a tooltip
-      var Tooltip = d3
-        .select("body")
-        .append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 1)
-        .style("border", "solid")
-        .style("border-width", "2px")
-        .style("border-radius", "5px")
-        .style("padding", "5px");
 
       // Three function that change the tooltip when user hover / move / leave a cell
       var mouseover = function (event, d) {
@@ -398,10 +388,39 @@
         .attr("class", "circle")
         .style("fill", "#FF7A7A")
         .style("stroke", "#FF7A7A")
-        // .style("opacity", 0.5)
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave);
+        
+      var div = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+        svg.on("mousemove", function (event, d) {
+        var m = d3.pointer(event, this);
+        var closest = markers.reduce(function (prev, curr) {
+          var currDist =
+            Math.pow(curr.long - projection.invert(m)[0], 2) +
+            Math.pow(curr.lat - projection.invert(m)[1], 2);
+          var prevDist =
+            Math.pow(prev.long - projection.invert(m)[0], 2) +
+            Math.pow(prev.lat - projection.invert(m)[1], 2);
+          return currDist < prevDist ? curr : prev;
+        });
+
+        div
+          .transition()
+          .duration(200)
+          .style("opacity", 0.9);
+        div
+          .html("City: " + closest.city + "<br>" + "Value: " + closest.value)
+          .style("left", event.pageX + "px")
+          .style("top", event.pageY - 28 + "px");
+      });
+
+      svg.on("mouseout", function () {
+        div
+          .transition()
+          .duration(500)
+          .style("opacity", 0);
+      });
     </script>
   </body>
 </html>
