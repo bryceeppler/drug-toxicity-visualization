@@ -2,6 +2,8 @@
 <html>
   <head>
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!-- <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script> -->
+
     <script src="https://unpkg.com/topojson@3"></script>
     <style>
       .line {
@@ -29,6 +31,18 @@
         justify-content: center;
         align-items: center;
       }
+      div.tooltip {
+        position: absolute;
+        text-align: center;
+        width: 60px;
+        height: 28px;
+        padding: 2px;
+        font: 12px sans-serif;
+        background: lightsteelblue;
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+      }
     </style>
   </head>
   <body>
@@ -40,18 +54,19 @@
         align-items: center;
       "
     >
-    <div class="vis-container">
+      <div class="vis-container">
         <h3>Line chart</h3>
-      <svg class="linechart" width="560" height="500"></svg>
-    </div>
-    <div class="vis-container">
+        <svg class="linechart" width="560" height="500"></svg>
+      </div>
+      <div class="vis-container">
         <h3>Treemap</h3>
-      <svg class="treemap" width="560" height="500"></svg>
-    </div>
-    <div class="vis-container">
+        <svg class="treemap" width="560" height="500"></svg>
+      </div>
+      <div class="vis-container">
         <h3>Bubblemap</h3>
-      <svg class="bubblemap" width="560" height="800"></svg>
-    </div>
+        <svg class="bubblemap" width="560" height="800"></svg>
+      </div>
+      <!-- <div id="tooltip" style="display: none"></div> -->
     </div>
     <!-- Line Chart -->
     <script>
@@ -213,8 +228,8 @@
 
       var projection = d3
         .geoMercator()
-        .center([-120.3656444, 53.2827291])
-        .scale(2000)
+        .center([-122.3656444, 52.0])
+        .scale(3800)
         .translate([svg.attr("width") / 2, svg.attr("height") / 2]);
 
       var markers = [
@@ -223,38 +238,99 @@
           long: -123.1207375,
           lat: 49.2827291,
           value: 323,
+          city: "Vancouver",
         },
         {
           // Victoria
           long: -123.55,
           lat: 48.55,
-            value: 100,
+          value: 100,
+          city: "Victoria",
         },
         {
-            // Nanaimo
-            long: -123.9361111,
-            lat: 49.1652778,
-            value: 64,
+          // Nanaimo
+          long: -123.9361111,
+          lat: 49.1652778,
+          value: 64,
+          city: "Nanaimo",
         },
         {
-            // Prince George
-            long: -122.7494444,
-            lat: 53.9166667,
-            value: 96,
+          // Prince George
+          long: -122.7494444,
+          lat: 53.9166667,
+          value: 96,
+          city: "Prince George",
         },
         {
-            // Kelowna
-            long: -119.4927778,
-            lat: 49.8877778,
-            value: 46,
+          // Kelowna
+          long: -119.4927778,
+          lat: 49.8877778,
+          value: 46,
+          city: "Kelowna",
         },
         {
-            // Abbotsford
-            long: -122.3002778,
-            lat: 49.0577778,
-            value: 123,
+          // Abbotsford
+          long: -122.3002778,
+          lat: 49.0577778,
+          value: 123,
+          city: "Abbotsford",
+        },
+        {
+          // Kamloops
+          long: -120.3152778,
+          lat: 50.6741667,
+          value: 76,
+          city: "Kamloops",
+        },
+        {
+          // Surrey
+          long: -122.8488889,
+          lat: 49.1911111,
+          value: 223,
+          city: "Surrey",
+        },
+        {
+          //Burnaby
+          long: -122.9494444,
+          lat: 49.25,
+          value: 123,
+          city: "Burnaby",
+        },
+        {
+          // Chilliwack
+          long: -121.9502778,
+          lat: 49.1666667,
+          value: 56,
+          city: "Chilliwack",
+        },
+        {
+          // Langley
+          long: -122.6611111,
+          lat: 49.0991667,
+          value: 96,
+          city: "Langley",
+        },
+        {
+          // Maple Ridge
+          long: -122.6002778,
+          lat: 49.2172222,
+          value: 66,
+          city: "Maple Ridge",
+        },
+        { 
+          // Vernon
+          long: -119.2738889,
+          lat: 50.2602778,
+          value: 36,
+          city: "Vernon",
+        },
+        {
+          // Mission
+          long: -122.3333333,
+          lat: 49.1333333,
+          value: 16,
+          city: "Mission",
         }
-
       ];
 
       // Draw the map
@@ -270,7 +346,11 @@
           .style("stroke", "black")
           .style("opacity", 0.3);
       });
-
+      var div = d3
+        .select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
       // Draw the markers
       svg
         .selectAll("circle")
@@ -288,7 +368,17 @@
         })
         .style("fill", "#4682B4")
         .style("stroke", "white")
-        .style("opacity", 0.8);
+        .style("opacity", 0.8)
+        .on("mouseover", function (event, d) {
+          div.transition().duration(200).style("opacity", 0.9);
+          div
+            .html(d.city + "<br/>" + d.value)
+            .style("left", event.pageX + "px")
+            .style("top", event.pageY - 28 + "px");
+        })
+        .on("mouseout", function (d) {
+          div.transition().duration(500).style("opacity", 0);
+        });
     </script>
   </body>
 </html>
