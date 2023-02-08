@@ -236,10 +236,10 @@
 
       var projection = d3
         .geoMercator()
-        .center([-122.3656444, 52.0])
-        .scale(3800)
+        .center([-122.0656444, 51.5])
+        .scale(4500)
         .translate([svg.attr("width") / 2, svg.attr("height") / 2])
-        .precision(0.1);
+        .precision(0.7);
 
       var markers = [
         {
@@ -258,7 +258,7 @@
         },
         {
           // Nanaimo
-          long: -123.9361111,
+          long: -124.21111,
           lat: 49.1652778,
           value: 64,
           city: "Nanaimo",
