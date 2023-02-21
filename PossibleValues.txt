@@ -1,0 +1,213 @@
+Possible values for Substance:
+Opioids
+Stimulants
+
+
+Possible values for Source:
+Deaths
+Hospitalizations
+Emergency Medical Services (EMS)
+
+
+Possible values for Specific_Measure:
+Overall numbers
+Sex
+Age group
+Type of opioids
+Involving stimulants
+Involving other psychoactive substances
+Origin of opioid(s)
+Age group by sex
+Type of opioids by sex
+Type of opioids by age group
+Type of opioids by origin of opioid(s)
+Sex by origin of opioid(s)
+Involving other non-opioid substances
+Type of stimulants
+Involving opioids
+Type of stimulants by sex
+Type of stimulants by age group
+Involving other non-stimulant substances
+
+
+Possible values for Type_Event:
+Total apparent opioid toxicity deaths
+Accidental apparent opioid toxicity deaths
+Suicide apparent opioid toxicity deaths
+Total opioid-related poisoning hospitalizations
+Accidental opioid-related poisoning hospitalizations
+Intentional opioid-related poisoning hospitalizations
+EMS responses to suspected opioid-related overdoses
+Total apparent stimulant toxicity deaths
+Accidental apparent stimulant toxicity deaths
+Total stimulant-related poisoning hospitalizations
+Accidental stimulant-related poisoning hospitalizations
+Intentional stimulant-related poisoning hospitalizations
+
+
+Possible values for Region:
+Canada
+British Columbia
+Alberta
+Saskatchewan
+Manitoba
+Ontario
+Quebec
+New Brunswick
+Nova Scotia
+Prince Edward Island
+Newfoundland and Labrador
+Yukon
+Northwest Territories
+Nunavut
+Territories
+Winnipeg Manitoba
+Northern and Rural Manitoba
+Whitehorse Yukon
+Yellowknife Northwest Territories
+
+
+Possible values for PRUID:
+1
+59
+48
+47
+46
+35
+24
+13
+12
+11
+10
+60
+61
+62
+63
+
+
+Possible values for Time_Period:
+By year
+By quarter
+
+
+Possible values for Year_Quarter:
+2016
+2017
+2018
+2019
+2020
+2021
+2022 (Jan to Jun)
+2016 Q1
+2016 Q2
+2016 Q3
+2016 Q4
+2017 Q1
+2017 Q2
+2017 Q3
+2017 Q4
+2018 Q1
+2018 Q2
+2018 Q3
+2018 Q4
+2019 Q1
+2019 Q2
+2019 Q3
+2019 Q4
+2020 Q1
+2020 Q2
+2020 Q3
+2020 Q4
+2021 Q1
+2021 Q2
+2021 Q3
+2021 Q4
+2022 Q1
+2022 Q2
+2018 (Apr to Dec)
+2022 (Jan to Mar)
+
+
+Possible values for Aggregator:
+nan
+2016
+2017
+2018
+2019
+2020
+2021
+2022 (Jan to Jun)
+0 to 19 years
+20 to 29 years
+30 to 39 years
+40 to 49 years
+50 to 59 years
+60 years or more
+Fentanyl
+Fentanyl analogues
+Non-fentanyl opioids
+Female
+Male
+2017 Q1
+2017 Q2
+2017 Q3
+2017 Q4
+2018 Q1
+2018 Q2
+2018 Q3
+2018 Q4
+2019 Q1
+2019 Q2
+2019 Q3
+2019 Q4
+2020 Q1
+2020 Q2
+2020 Q3
+2020 Q4
+2021 Q1
+2021 Q2
+2021 Q3
+2021 Q4
+2022 Q1
+2022 Q2
+2022 (Jan to Mar)
+Cocaine
+Methamphetamine
+Other stimulants
+
+
+Possible values for Disaggregator:
+nan
+Female
+Male
+0 to 19 years
+20 to 29 years
+30 to 39 years
+40 to 49 years
+50 to 59 years
+60 years or more
+Fentanyl
+Fentanyl analogues
+Non-fentanyl opioids
+Pharmaceutical only
+Both
+Non-pharmaceutical only
+Undetermined
+Stimulants involved
+Non-stimulant/non-opioid substances involved
+Non-opioid substances involved
+Cocaine
+Methamphetamine
+Other stimulants
+Cocaine involved
+Other psychostimulants involved
+Involving fentanyl or fentanyl analogues
+Opioids involved
+Non-stimulant substances involved
+
+
+Possible values for Unit:
+Crude rate
+Number
+Age-adjusted rate
+Percent
