@@ -4,7 +4,7 @@
     <link href="output.css" rel="stylesheet" />
 
     <!-- Load d3.js -->
-    <script src="http://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>    
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
@@ -27,7 +27,14 @@
 
           <div class="col-span-5 flex h-auto flex-col">
             <!-- Bar chart -->
-            <div class="h-auto w-full bg-red-400">
+            <div class="h-auto w-fullx flex flex-col">
+              <label for="province-selector"><strong>Province:</strong></label>
+              <select id="province-selector">
+                <option value="0" selected>Canada</option>
+                <option value="1">Province 2</option>
+                <option value="2">Province 3</option>
+                <option value="3">Province 4</option>
+              </select>
               <svg id="bar" width="200" height="150"></svg>
               
             </div>
@@ -43,6 +50,6 @@
 </html>
 <meta charset="utf-8" />
 
-<script src="map.js"></script>
-<script src="bar.js"></script>
-<script src="treemap.js"></script>
+<script src="components/map.js"></script>
+<script src="components/bar.js"></script>
+<script src="components/treemap.js"></script>
