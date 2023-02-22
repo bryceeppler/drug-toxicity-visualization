@@ -34,9 +34,9 @@ const provinceDataForMap2 = new Map(
   )
   var provinceDataForMap = provinceDataForMap2;
   // The svg has id map
-  var svg = d3.select("#map"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+  var mapSvg = d3.select("#map"),
+    width = +mapSvg.attr("width"),
+    height = +mapSvg.attr("height");
 
   // Map and projection
   var path = d3.geoPath();
@@ -91,7 +91,7 @@ const provinceDataForMap2 = new Map(
     };
 
     // Draw the map
-    svg
+    mapSvg
       .append("g")
       .selectAll("path")
       .data(topo.features)
