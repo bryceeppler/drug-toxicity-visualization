@@ -1,152 +1,48 @@
 <!DOCTYPE html>
-<meta charset="utf-8" />
+<html>
+  <head>
+    <link href="output.css" rel="stylesheet" />
 
-<!-- Load d3.js -->
-<script src="http://d3js.org/d3.v4.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-<script src="https://unpkg.com/topojson@3"></script>
-<link href="output.css" rel="stylesheet" />
+    <!-- Load d3.js -->
+    <script src="http://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+  </head>
+  <body>
+    <div class="min-h-screen w-full">
+      <div class="mx-auto w-full max-w-4xl items-center justify-center">
+        <div class="grid w-full grid-cols-12 bg-gray-100">
+          <!-- Header -->
+          <div class="col-span-12 h-24 w-full bg-gray-200">
+            <h1>Header</h1>
+            <div>slider to select year</div>
+          </div>
+          <div
+            class="col-span-7 flex h-auto flex-col items-center justify-center"
+          >
+            <!-- Chloropleth map -->
+            <svg id="map" width="400" height="300"></svg>
+          </div>
 
-<div class="min-h-screen w-full">
-  <div class="mx-auto w-full max-w-4xl items-center justify-center">
-    <div class="grid w-full grid-cols-12 bg-gray-100">
-      <!-- Header -->
-      <div class="col-span-12 h-24 w-full bg-gray-200">
-        <h1>Header</h1>
-        <div>slider to select year</div>
-      </div>
-      <div
-        class="col-span-7 flex h-auto flex-col items-center justify-center bg-red-100"
-      >
-        <!-- Chloropleth map -->
-        <svg id="my_dataviz" width="400" height="300"></svg>
-      </div>
-      <div class="col-span-5 bg-yellow-200">
-        <!-- Bar chart -->
-        <div class="h-48 w-full bg-red-400"></div>
-        <!-- Treemap -->
-        <div class="h-48 w-full bg-blue-400"></div>
+          <div class="col-span-5 flex h-auto flex-col">
+            <!-- Bar chart -->
+            <div class="h-20 w-full bg-red-400">
+              <!-- <svg id="bar" width="200" height="150"></svg> -->
+              
+            </div>
+            <!-- Treemap -->
+            <div class="h-20 w-full bg-blue-400">
+              <svg id="treemap"></svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </body>
+</html>
+<meta charset="utf-8" />
 
-<script>
-  const provinceDataForMap2 = new Map(
-    Object.entries({
-      "British Columbia": 10000,
-      "Alberta": 2000,
-      "Saskatchewan": 4000,
-      "Manitoba": 5000,
-      "Ontario": 1000,
-      "Quebec": 1500,
-      "Newfoundland and Labrador": 3000,
-      "Prince Edward Island": 5000,
-      "Yukon Territory": 5600,
-      "Northwest Territories": 3000,
-      "Nunavut": 2000,
-      "New Brunswick": 1000,
-      "Nova Scotia": 500,
-    })
-  );
-  const provinceDataForMap = new Map(
-    Object.entries({
-      "British Columbia": 100,
-      "Alberta": 2000,
-      "Saskatchewan": 9000,
-      "Manitoba": 2000,
-      "Ontario": 4000,
-      "Quebec": 4500,
-      "Newfoundland and Labrador": 3000,
-      "Prince Edward Island": 5000,
-      "Yukon Territory": 1600,
-      "Northwest Territories": 3000,
-      "Nunavut": 2000,
-      "New Brunswick": 2000,
-      "Nova Scotia": 9000,
-    })
-  )
-  // The svg
-  var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
-
-  // Map and projection
-  var path = d3.geoPath();
-  var projection = d3
-    .geoMercator()
-    .scale(200)
-    .center([-98.5, 61.5])
-    .translate([width / 2, height / 2]);
-
-  // Data and color scale
-  var data = d3.map();
-  var colorScale = d3
-    .scaleThreshold()
-    .domain([500, 1000, 2500, 5000, 7500, 10000])
-    .range(d3.schemeBlues[7]);
-
-  // Load external data and boot
-  d3.queue()
-    .defer(
-      d3.json,
-      "https://raw.githubusercontent.com/codeforgermany/click_that_hood/main/public/data/canada.geojson"
-    )
-    .defer(d3.csv, "test.csv", function (d) {
-      data.set(d.name, +d.val);
-      console.log("data after setting, we need to replicate this")
-      console.log(data)
-    })
-    .await(ready);
-
-  function ready(error, topo) {
-    let mouseOver = function (d) {
-      d3.selectAll(".Province")
-        .transition()
-        .duration(200)
-        .style("opacity", 0.5);
-      d3.select(this)
-        .transition()
-        .duration(200)
-        .style("opacity", 1)
-        .style("stroke", "black");
-    };
-
-    let mouseOut = function (d) {
-      d3.select(this).style("stroke", "transparent");
-    };
-
-    let mouseLeave = function (d) {
-      d3.selectAll(".Province")
-        .transition()
-        .duration(200)
-        .style("opacity", 0.8)
-        .style("stroke", "transparent");
-      d3.select(this).transition().duration(200).style("stroke", "transparent");
-    };
-
-    // Draw the map
-    svg
-      .append("g")
-      .selectAll("path")
-      .data(topo.features)
-      .enter()
-      .append("path")
-      .attr("d", d3.geoPath().projection(projection))
-      // set the color of each Province
-      .attr("fill", function (d) {
-        console.log(d.properties.name);
-        d.total = provinceDataForMap.get(d.properties.name) || 0;
-        return colorScale(d.total);
-      })
-      .style("stroke", "transparent")
-      .attr("class", function (d) {
-        return "Province";
-      })
-      .style("opacity", 0.8)
-      .on("mouseover", mouseOver)
-      .on("mouseleave", mouseLeave)
-      .on("mouseout", mouseOut);
-  }
-</script>
+<script src="map.js"></script>
+<!-- <script src="bar.js"></script> -->
+<script src="treemap.js"></script>
