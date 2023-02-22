@@ -34,30 +34,31 @@ d3.csv("data/barData.csv").then(function (data) {
     .range([0, x.bandwidth()])
     .padding([0.05]);
 
-// Define color range for "male" subgroup
-const blueRange = ["#b3cde0", "#8db5cc", "#6497b1"];
+  // Define color range for "male" subgroup
+  const blueRange = ["#b3cde0", "#8db5cc", "#6497b1"];
 
-// Define color range for "female" subgroup
-const redRange = ["#fbb4ae", "#f768a1", "#c51b8a"];
+  // Define color range for "female" subgroup
+  const redRange = ["#fbb4ae", "#f768a1", "#c51b8a"];
 
-// Define color scale with two ranges
-const color = d3.scaleOrdinal()
-  .domain(subgroups)
-  .range(data.map(d => d.group === "male" ? redRange : blueRange).flat());
+  // Define color scale with two ranges
+  const color = d3
+    .scaleOrdinal()
+    .domain(subgroups)
+    .range(data.map((d) => (d.group === "male" ? redRange : blueRange)).flat());
 
-// Show the bars with new color scale
-barSvg
-  .append("g")
-  .selectAll("g")
-  .data(data)
-  .join("g")
-  .attr("transform", (d) => `translate(${x(d.group)},0)`)
-  .selectAll("rect")
-  .data((d) => subgroups.map((key) => ({ key: key, value: d[key] })))
-  .join("rect")
-  .attr("x", (d) => xSubgroup(d.key))
-  .attr("y", (d) => y(d.value))
-  .attr("width", xSubgroup.bandwidth())
-  .attr("height", (d) => height - y(d.value))
-  .attr("fill", (d) => color(d))
+  // Show the bars with new color scale
+  barSvg
+    .append("g")
+    .selectAll("g")
+    .data(data)
+    .join("g")
+    .attr("transform", (d) => `translate(${x(d.group)},0)`)
+    .selectAll("rect")
+    .data((d) => subgroups.map((key) => ({ key: key, value: d[key] })))
+    .join("rect")
+    .attr("x", (d) => xSubgroup(d.key))
+    .attr("y", (d) => y(d.value))
+    .attr("width", xSubgroup.bandwidth())
+    .attr("height", (d) => height - y(d.value))
+    .attr("fill", (d) => color(d));
 });
