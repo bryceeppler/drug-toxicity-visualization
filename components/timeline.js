@@ -3,11 +3,11 @@ const formatDateIntoYear = d3.timeFormat("%Y");
 const formatDate = d3.timeFormat("%b %Y");
 const parseDate = d3.timeParse("%m/%d/%y");
 
-const startDate = new Date("2004-11-01");
-const endDate = new Date("2017-04-01");
+const startDate = new Date("2016-01-01");
+const endDate = new Date("2022-04-01");
 
 const timelineMargin = { top: 0, right: 50, bottom: 0, left: 50 };
-const timelineWidth = 960 - timelineMargin.left - timelineMargin.right;
+const timelineWidth = 400 - timelineMargin.left - timelineMargin.right;
 const timelineHeight = 200 - timelineMargin.top - timelineMargin.bottom;
 
 const svg = d3
@@ -21,7 +21,6 @@ const svg = d3
 var moving = false;
 var currentValue = 0;
 var targetValue = timelineWidth;
-
 var playButton = d3.select("#play-button");
 
 var x = d3
@@ -102,7 +101,7 @@ var plot = svg
     "translate(" + timelineMargin.left + "," + timelineMargin.top + ")"
   );
 
-d3.csv("data/circles.csv", prepare).then(function (data) {
+d3.csv("data/timelinedata.csv", prepare).then(function (data) {
   dataset = data;
   drawPlot(dataset);
 
@@ -115,7 +114,7 @@ d3.csv("data/circles.csv", prepare).then(function (data) {
       button.text("Play");
     } else {
       moving = true;
-      timer = setInterval(step, 100);
+      timer = setInterval(step, 50);
       button.text("Pause");
     }
   });
@@ -141,7 +140,9 @@ function step() {
 
 function drawPlot(data) {
   var locations = plot.selectAll(".location").data(data);
-
+  var colorScale = d3.scaleLinear()
+  .domain([600, 2400])
+  .range(["#F6EBEB", "#e00000"]);
   // if filtered dataset has more circles than already existing, transition new ones in
   locations
     .enter()
@@ -152,10 +153,10 @@ function drawPlot(data) {
     })
     .attr("cy", height / 2)
     .style("fill", function (d) {
-      return d3.hsl(d.val, 0.8, 0.8);
+      return d3.hsl(colorScale(d.val));
     })
     .style("stroke", function (d) {
-      return d3.hsl(d.val, 0.7, 0.7);
+      return d3.hsl(colorScale(d.val));
     })
     .style("opacity", 0.5)
     .attr("r", 8)
