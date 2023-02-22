@@ -2,21 +2,25 @@
 <html>
   <head>
     <link href="output.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
 
     <!-- Load d3.js -->
-    <script src="http://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+
   </head>
   <body>
     <div class="min-h-screen w-full">
       <div class="mx-auto w-full max-w-4xl items-center justify-center">
-        <div class="grid w-full grid-cols-12 bg-gray-100">
+        <div class="grid w-full grid-cols-12 ">
           <!-- Header -->
-          <div class="col-span-12 h-24 w-full bg-gray-200">
-            <h1>Header</h1>
-            <div>slider to select year</div>
+          <div class="col-span-12 w-full ">
+            <div id="vis">
+              <button id="play-button">Play</button>
+            </div>
           </div>
           <div
             class="col-span-7 flex h-auto flex-col items-center justify-center"
@@ -27,12 +31,18 @@
 
           <div class="col-span-5 flex h-auto flex-col">
             <!-- Bar chart -->
-            <div class="h-auto w-full bg-red-400">
-              <svg id="bar" width="200" height="150"></svg>
-              
+            <div class="flex h-auto w-full flex-col">
+              <label for="province-selector"><strong>Province:</strong></label>
+              <select id="province-selector">
+                <option value="0" selected>Canada</option>
+                <option value="1">Province 2</option>
+                <option value="2">Province 3</option>
+                <option value="3">Province 4</option>
+              </select>
+              <svg id="bar"></svg>
             </div>
             <!-- Treemap -->
-            <div class="h-20 w-full bg-blue-400">
+            <div class="w-full">
               <svg id="treemap"></svg>
             </div>
           </div>
@@ -43,6 +53,7 @@
 </html>
 <meta charset="utf-8" />
 
-<script src="map.js"></script>
-<script src="bar.js"></script>
-<script src="treemap.js"></script>
+<script src="components/map.js"></script>
+<script src="components/bar.js"></script>
+<script src="components/treemap.js"></script>
+<script src="components/timeline.js"></script>
