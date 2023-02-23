@@ -3,7 +3,7 @@ const formatDateIntoYear = d3.timeFormat("%Y");
 const formatDate = d3.timeFormat("%b %Y");
 const parseDate = d3.timeParse("%m/%d/%y");
 
-const startDate = new Date("2016-01-01");
+const startDate = new Date("2016-02-01");
 const endDate = new Date("2022-04-01");
 
 const timelineMargin = { top: 0, right: 50, bottom: 0, left: 50 };
@@ -58,7 +58,7 @@ slider
       })
       .on("start drag", function (event) {
         currentValue = d3.pointer(event)[0];
-        update(x.invert(currentValue-190));
+        update(x.invert(currentValue - 190));
       })
   );
 
@@ -140,9 +140,10 @@ function step() {
 
 function drawPlot(data) {
   var locations = plot.selectAll(".location").data(data);
-  var colorScale = d3.scaleLinear()
-  .domain([600, 2400])
-  .range(["#F6EBEB", "#e00000"]);
+  var colorScale = d3
+    .scaleLinear()
+    .domain([600, 2400])
+    .range(["#F6EBEB", "#e00000"]);
   // if filtered dataset has more circles than already existing, transition new ones in
   locations
     .enter()
@@ -171,9 +172,13 @@ function drawPlot(data) {
 }
 
 function update(h) {
-
   // TODO update all the things
-  drawMap(h.getFullYear())
+  // DRAW MAP
+  // console.log(h)
+  drawMap(h);
+  // DRAW BAR CHART
+  // DRAW TREEMAP
+
   // update position and text of label according to slider scale
   handle.attr("cx", x(h));
   label.attr("x", x(h)).text(formatDate(h));
