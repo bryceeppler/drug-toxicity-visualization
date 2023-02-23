@@ -58,11 +58,11 @@ Promise.all([
   d3.json(
     "https://raw.githubusercontent.com/codeforgermany/click_that_hood/main/public/data/canada.geojson"
   ),
-  d3.csv("data/mapData.csv").then(function (d) {
-    d.forEach(function (row) {
-      data.set(row.name, +row.val);
-    });
-  }),
+  // d3.csv("data/mapData.csv").then(function (d) {
+  //   d.forEach(function (row) {
+  //     data.set(row.name, +row.val);
+  //   });
+  // }),
 ]).then(ready);
 
 function ready([topo]) {
@@ -108,4 +108,37 @@ function ready([topo]) {
     .on("mouseover", mouseOver)
     .on("mouseleave", mouseLeave)
     .on("mouseout", mouseOut);
+}
+
+function drawMap(year) {
+    // Update the province data based on the year
+    if (year >= 2016 && year <= 2018) {
+      provinceDataForMap = provinceDataForMap2;
+    } else if (year >= 2019 && year <= 2022) {
+      provinceDataForMap = provinceDataForMap3;
+    }
+  
+    // Clear the existing map
+    mapSvg.selectAll("path").remove();
+  
+    // Draw the updated map
+    mapSvg
+      .append("g")
+      .selectAll("path")
+      .data(topo.features)
+      .join("path")
+      .attr("d", path.projection(projection))
+      // set the color of each Province
+      .attr("fill", function (d) {
+        d.total = provinceDataForMap.get(d.properties.name) || 0;
+        return colorScale(d.total);
+      })
+      .style("stroke", "transparent")
+      .attr("class", function (d) {
+        return "Province";
+      })
+      .style("opacity", 0.8)
+      .on("mouseover", mouseOver)
+      .on("mouseleave", mouseLeave)
+      .on("mouseout", mouseOut);
 }

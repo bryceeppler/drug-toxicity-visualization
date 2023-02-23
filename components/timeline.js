@@ -58,7 +58,7 @@ slider
       })
       .on("start drag", function (event) {
         currentValue = d3.pointer(event)[0];
-        update(x.invert(currentValue));
+        update(x.invert(currentValue-190));
       })
   );
 
@@ -171,6 +171,9 @@ function drawPlot(data) {
 }
 
 function update(h) {
+
+  // TODO update all the things
+  drawMap(h.getFullYear())
   // update position and text of label according to slider scale
   handle.attr("cx", x(h));
   label.attr("x", x(h)).text(formatDate(h));
