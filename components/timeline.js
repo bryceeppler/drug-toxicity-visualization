@@ -193,6 +193,7 @@ function update(h) {
   selectedDate = tempYearMonth;
   drawMap(selectedDate);
   // DRAW BAR CHART
+  drawBar(selectedDate, "Canada")
   // DRAW TREEMAP
 
   // update position and text of label according to slider scale

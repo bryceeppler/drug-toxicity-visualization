@@ -79,7 +79,7 @@ const tooltip = d3
   .attr("class", "tooltip")
   .style("opacity", 0);
 
-d3.json("treemapData.json").then((data) => {
+d3.json("data/exampleTreemapData.json").then((data) => {
   const root = treemap(data);
 
   const cell = treemapSvg

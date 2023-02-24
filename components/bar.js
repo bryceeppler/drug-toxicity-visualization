@@ -15,15 +15,28 @@ var selectedBarData;
 d3.json("data/barData.json")
   .then(function (data) {
     jsonbarData = data;
-    console.log("jsonbarData", jsonbarData);
-    selectedBarData = jsonbarData["2020-01"]["Alberta"];
-    console.log("selectedBarData", selectedBarData);
   })
   .then(function () {
-    drawBar();
+    drawBar("2020-01", "Canada");
   });
 
-function drawBar() {
+function drawBar(date, province) {
+  var tempYear = date.split("-")[0]
+  
+  // If there is no data for this year, show nothing
+  // we only have 2018 - 2022
+  if (tempYear < 2018 || tempYear > 2022) {
+    return;
+  }
+  var tempDate = tempYear + "-01";
+
+  // if selectedBarData isn't going to change, return from the function
+  if (selectedBarData === jsonbarData[tempDate][province]) {
+    return;
+  }
+  selectedBarData = jsonbarData[tempDate][province];
+  // remove previous bar chart
+  barSvg.selectAll("*").remove();
   const subgroups = [
     "0 to 19 years",
     "20 to 29 years",
@@ -40,8 +53,20 @@ function drawBar() {
     .attr("transform", `translate(0, ${height})`)
     .call(d3.axisBottom(x).tickSize(0));
 
-  // Add Y axis
-  const y = d3.scaleLinear().domain([0, 280]).range([height, 0]);
+  var maxVal = 0;
+  for (let i = 0; i < selectedBarData.length; i++) {
+    for (let j = 0; j < subgroups.length; j++) {
+      console.log("subgroups[j]", subgroups[j])
+      if (parseInt(selectedBarData[i][subgroups[j]]) > maxVal) {
+        maxVal = selectedBarData[i][subgroups[j]];
+      }
+    }
+  }
+
+
+  maxVal = parseInt(maxVal);
+  maxVal=2000
+  const y = d3.scaleLinear().domain([0, maxVal]).range([height, 0]);
   barSvg.append("g").call(d3.axisLeft(y));
 
   // Another scale for subgroup position?
@@ -84,19 +109,26 @@ function drawBar() {
         .flat()
     );
 
-  // Show the bars with new color scale
-  barSvg
-    .append("g")
-    .selectAll("g")
-    .data(selectedBarData)
-    .join("g")
-    .attr("transform", (d) => `translate(${x(d.group)},0)`)
-    .selectAll("rect")
-    .data((d) => subgroups.map((key) => ({ key: key, value: d[key] })))
-    .join("rect")
-    .attr("x", (d) => xSubgroup(d.key))
-    .attr("y", (d) => y(d.value))
-    .attr("width", xSubgroup.bandwidth())
-    .attr("height", (d) => height - y(d.value))
-    .attr("fill", (d) => color(d));
+// Show the bars with new color scale
+const bars = barSvg
+  .append("g")
+  .selectAll("g")
+  .data(selectedBarData)
+  .join("g")
+  .attr("transform", (d) => `translate(${x(d.group)},0)`);
+
+bars
+  .selectAll("rect")
+  .data((d) => subgroups.map((key) => ({ key: key, value: d[key] })))
+  .join("rect")
+  .attr("x", (d) => xSubgroup(d.key))
+  .attr("height", d => height - y(0)) // always equal to 0
+  .attr("y", d => y(0))  .attr("width", xSubgroup.bandwidth())
+  .attr("fill", (d) => color(d))
+
+bars.selectAll("rect").transition().duration(300)
+.attr("y", (d) => y(d.value))
+.attr("height", (d) => height - y(d.value))
+// .delay((d,i) => {console.log(i); return 10})
 }
+
