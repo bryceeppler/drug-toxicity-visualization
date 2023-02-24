@@ -5,7 +5,7 @@ const parseDate = d3.timeParse("%m/%d/%y");
 
 const startDate = new Date("2016-02-01");
 const endDate = new Date("2022-04-01");
-
+var selectedDate = "2020-01"
 const timelineMargin = { top: 0, right: 50, bottom: 0, left: 50 };
 const timelineWidth = 400 - timelineMargin.left - timelineMargin.right;
 const timelineHeight = 200 - timelineMargin.top - timelineMargin.bottom;
@@ -175,7 +175,23 @@ function update(h) {
   // TODO update all the things
   // DRAW MAP
   // console.log(h)
-  drawMap(h);
+  let tempYear = h.getFullYear();
+  let tempMonth = h.getMonth();
+  // if temp month in is the first quarter, set it to 1
+  if (tempMonth < 3) {
+    tempMonth = 1;
+  } else if (tempMonth < 6) {
+    tempMonth = 4;
+  } else if (tempMonth < 9) {
+    tempMonth = 7;
+  } else {
+    tempMonth = 10;
+  }
+  // temp month must have a leading 0 if it is less than 10
+  let tempYearMonth = tempYear + "-" + (tempMonth < 10 ? "0" : "") + tempMonth;
+  
+  selectedDate = tempYearMonth;
+  drawMap(selectedDate);
   // DRAW BAR CHART
   // DRAW TREEMAP
 

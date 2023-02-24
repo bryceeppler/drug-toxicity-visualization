@@ -1,18 +1,18 @@
 var provinceDataForMap = new Map(
   Object.entries({
     "British Columbia": 169,
-    Alberta: 118,
-    Saskatchewan: 25,
-    Manitoba: 11,
-    Ontario: 174,
-    Quebec: 52,
+    "Alberta": 118,
+    "Saskatchewan": 25,
+    "Manitoba": 11,
+    "Ontario": 174,
+    "Quebec": 52,
     "New Brunswick": 11,
     "Nova Scotia": 14,
     "Prince Edward Island": -2,
     "Newfoundland and Labrador": -1,
-    Yukon: 0,
+    "Yukon": 0,
     "Northwest Territories": 1,
-    Nunavut: -1,
+    "Nunavut": -1,
   })
 );
 // The svg has id map
@@ -24,7 +24,7 @@ var mapSvg = d3.select("#map"),
 var path = d3.geoPath();
 var projection = d3
   .geoMercator()
-  .scale(200)
+  .scale(250)
   .center([-98.5, 61.5])
   .translate([width / 2, height / 2]);
 
@@ -101,22 +101,22 @@ function drawMap(date) {
   //   provinceDataForMap = provinceDataForMap3;
   // }
   // convert date to 2014-01-01
-  let tempYear = date.getFullYear();
-  let tempMonth = date.getMonth();
-  // if temp month in is the first quarter, set it to 1
-  if (tempMonth < 3) {
-    tempMonth = 1;
-  } else if (tempMonth < 6) {
-    tempMonth = 4;
-  } else if (tempMonth < 9) {
-    tempMonth = 7;
-  } else {
-    tempMonth = 10;
-  }
-  // temp month must have a leading 0 if it is less than 10
-  let tempYearMonth = tempYear + "-" + (tempMonth < 10 ? "0" : "") + tempMonth;
+  // let tempYear = date.getFullYear();
+  // let tempMonth = date.getMonth();
+  // // if temp month in is the first quarter, set it to 1
+  // if (tempMonth < 3) {
+  //   tempMonth = 1;
+  // } else if (tempMonth < 6) {
+  //   tempMonth = 4;
+  // } else if (tempMonth < 9) {
+  //   tempMonth = 7;
+  // } else {
+  //   tempMonth = 10;
+  // }
+  // // temp month must have a leading 0 if it is less than 10
+  // let tempYearMonth = tempYear + "-" + (tempMonth < 10 ? "0" : "") + tempMonth;
   // provinceDataForMap = mapJsonData[date]
-  let selectedJsonData = mapJsonData[tempYearMonth];
+  let selectedJsonData = mapJsonData[date];
   // convert the json data to a map
   provinceDataForMap = new Map(Object.entries(selectedJsonData));
   // Clear the existing map
