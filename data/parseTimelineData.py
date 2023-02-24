@@ -1,5 +1,7 @@
+# TODO: Make this output values for sum(opioid deaths + stimulant deaths). Right now it only calculates the sum of opioid deaths.
+
 import csv
-#  Right now this only fetches the opioids
+
 # Open the CSV file
 with open('SubstanceHarmsData.csv', 'r') as csv_file:
     reader = csv.DictReader(csv_file)
@@ -24,10 +26,8 @@ with open('SubstanceHarmsData.csv', 'r') as csv_file:
             yearQuarter = row['Year_Quarter']
             year = yearQuarter[:4].strip()[2:] # 2018 -> 18
             quarter = yearQuarter[4:].strip() # Q1, Q2, Q3, Q4
-            # month = map Q1 = 1, Q2 = 4, Q3 = 7, Q4 = 10
             month = {'Q1': 1, 'Q2': 4, 'Q3': 7, 'Q4': 10}[quarter]
             value = row['Value']
-
 
             # Append a new row to the output data list
             output_data.append({

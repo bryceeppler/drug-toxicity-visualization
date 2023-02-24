@@ -1,6 +1,8 @@
+# TODO: Make this output values for sum(opioid deaths + stimulant deaths). Right now it only calculates the sum of opioid deaths.
+
 import csv
 import json
-#  Right now this only fetches the opioids
+
 with open('SubstanceHarmsData.csv', 'r') as csv_file:
     reader = csv.DictReader(csv_file)
 
@@ -46,85 +48,6 @@ with open('SubstanceHarmsData.csv', 'r') as csv_file:
                     age:value
                 }
                 output_data[date][province].append(objectToAdd)
-
-               #     "Canada": [
-    #         {
-    #             "group": "female",
-    #             "0 to 19 years": "5",
-    #             "20 to 29 years": "5",
-    #             "30 to 39 years": "4",
-    #             "40 to 49 years": "5",
-    #             "50 to 59 years": "6",
-    #             "60 years or more": "2"
-    #         }, 
-            # objToAdd = {
-            #     "group":sex.lower(),
-            #     age:value
-            # }
-            # output_data[date][province]
-            # if sex not in output_data[date][province]:
-            #     output_data[date][province][sex] = {}
-            # output_data[date][province][sex][age] = value
-
-    # for date in output_data:
-    #     for province in output_data[date]:
-    #         del output_data[date][province]['date']
-
-    # print(output_data)
-    # we have
-    # {
-    # "2021-01": {
-    #     "Canada": {
-    #       "Female": {
-    #         "0 to 19 years": "35",
-    #         "20 to 29 years": "347",
-    #         "30 to 39 years": "496",
-    #         "40 to 49 years": "329",
-    #         "50 to 59 years": "275",
-    #         "60 years or more": "91"
-    #       },
-    #       "Male": {
-    #         "0 to 19 years": "63",
-    #         "20 to 29 years": "735",
-    #         "30 to 39 years": "1276",
-    #         "40 to 49 years": "1046",
-    #         "50 to 59 years": "930",
-    #         "60 years or more": "382"
-    #       }
-    #     },
-    #     "British Columbia": {
-    #     ...
-    #     }
-    #   }
-    # }
-
-    # we need
-    # {
-    # "2021-01": {
-    #     "Canada": [
-    #         {
-    #             "group": "female",
-    #             "0 to 19 years": "5",
-    #             "20 to 29 years": "5",
-    #             "30 to 39 years": "4",
-    #             "40 to 49 years": "5",
-    #             "50 to 59 years": "6",
-    #             "60 years or more": "2"
-    #         },
-    #         {
-    #             "group": "male",
-    #             "0 to 19 years": "20",
-    #             "20 to 29 years": "30",
-    #             "30 to 39 years": "20",
-    #             "40 to 49 years": "20",
-    #             "50 to 59 years": "18",
-    #             "60 years or more": "20"
-    #         }
-    #     ],
-    #     "British Columbia": [
-    #         {...},
-    #      ]
-    #   }
 
 
     # Write the output data to a new json file
