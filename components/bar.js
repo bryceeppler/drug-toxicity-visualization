@@ -10,13 +10,29 @@ const barSvg = d3
   .append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-d3.csv("data/barData.csv").then(function (data) {
-  // List of subgroups = header of the csv files = soil condition here
-  const subgroups = data.columns.slice(1);
+var jsonbarData;
+var selectedBarData;
+d3.json("data/barData.json")
+  .then(function (data) {
+    jsonbarData = data;
+    console.log("jsonbarData", jsonbarData);
+    selectedBarData = jsonbarData["2020-01"]["Alberta"];
+    console.log("selectedBarData", selectedBarData);
+  })
+  .then(function () {
+    drawBar();
+  });
 
-  // List of groups = species here = value of the first column called group -> I show them on the X axis
-  const groups = Array.from(new Set(data.map((d) => d.group)));
-
+function drawBar() {
+  const subgroups = [
+    "0 to 19 years",
+    "20 to 29 years",
+    "30 to 39 years",
+    "40 to 49 years",
+    "50 to 59 years",
+    "60 years or more",
+  ];
+  const groups = ["female", "male"];
   // Add X axis
   const x = d3.scaleBand().domain(groups).range([0, width]).padding([0.2]);
   barSvg
@@ -25,7 +41,7 @@ d3.csv("data/barData.csv").then(function (data) {
     .call(d3.axisBottom(x).tickSize(0));
 
   // Add Y axis
-  const y = d3.scaleLinear().domain([0, 40]).range([height, 0]);
+  const y = d3.scaleLinear().domain([0, 280]).range([height, 0]);
   barSvg.append("g").call(d3.axisLeft(y));
 
   // Another scale for subgroup position?
@@ -36,22 +52,43 @@ d3.csv("data/barData.csv").then(function (data) {
     .padding([0.05]);
 
   // Define color range for "male" subgroup
-  const blueRange = ["#b3cde0", "#8db5cc", "#6497b1"];
+  const blueRange = [
+    "#b3cde0",
+    "#a1b8d6",
+    "#8db5cc",
+    "#779cc1",
+    "#5d85b0",
+    "#416b9e",
+  ];
 
   // Define color range for "female" subgroup
-  const redRange = ["#fbb4ae", "#f768a1", "#c51b8a"];
+  const redRange = [
+    "#fbb4ae",
+    "#f8a2a7",
+    "#f68e9f",
+    "#f47997",
+    "#f2658e",
+    "#c51b8a",
+  ];
 
   // Define color scale with two ranges
   const color = d3
     .scaleOrdinal()
     .domain(subgroups)
-    .range(data.map((d) => (d.group === "male" ? redRange : blueRange)).flat());
+    .range(
+      selectedBarData
+        .map((d) => {
+          // console.log(d);
+          return d.group === "male" ? redRange : blueRange;
+        })
+        .flat()
+    );
 
   // Show the bars with new color scale
   barSvg
     .append("g")
     .selectAll("g")
-    .data(data)
+    .data(selectedBarData)
     .join("g")
     .attr("transform", (d) => `translate(${x(d.group)},0)`)
     .selectAll("rect")
@@ -62,4 +99,4 @@ d3.csv("data/barData.csv").then(function (data) {
     .attr("width", xSubgroup.bandwidth())
     .attr("height", (d) => height - y(d.value))
     .attr("fill", (d) => color(d));
-});
+}

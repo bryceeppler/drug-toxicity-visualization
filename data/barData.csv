@@ -1,3 +1,3 @@
-group,young,middle,old
-female,12,31,4
-male,20,30,10
+group,0 to 19 years,20 to 29 years,30 to 39 years,40 to 49 years,50 to 59 years,60 years or more
+female,5,5,4,5,6,2
+male,20,30,20,20,18,20
