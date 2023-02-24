@@ -7,7 +7,7 @@ const startDate = new Date("2016-02-01");
 const endDate = new Date("2022-04-01");
 var selectedDate = "2020-01"
 const timelineMargin = { top: 0, right: 50, bottom: 0, left: 50 };
-const timelineWidth = 400 - timelineMargin.left - timelineMargin.right;
+const timelineWidth = 800 - timelineMargin.left - timelineMargin.right;
 const timelineHeight = 200 - timelineMargin.top - timelineMargin.bottom;
 
 const svg = d3
@@ -58,7 +58,7 @@ slider
       })
       .on("start drag", function (event) {
         currentValue = d3.pointer(event)[0];
-        update(x.invert(currentValue - 190));
+        update(x.invert(currentValue - 90));
       })
   );
 
@@ -165,7 +165,7 @@ function drawPlot(data) {
     .duration(400)
     .attr("r", 25)
     .transition()
-    .attr("r", 8);
+    .attr("r", 14);
 
   // if filtered dataset has less circles than already existing, remove excess
   locations.exit().remove();
