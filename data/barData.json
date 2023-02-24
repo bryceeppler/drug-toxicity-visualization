@@ -1,7 +1,8 @@
 {
-  "2022-01": {
-    "Canada": {
-      "Female": {
+  "2022 (Jan to Jun)-01": {
+    "Canada": [
+      {
+        "group": "female",
         "0 to 19 years": "16",
         "20 to 29 years": "109",
         "30 to 39 years": "152",
@@ -9,7 +10,8 @@
         "50 to 59 years": "118",
         "60 years or more": "44"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "23",
         "20 to 29 years": "257",
         "30 to 39 years": "532",
@@ -17,9 +19,10 @@
         "50 to 59 years": "368",
         "60 years or more": "165"
       }
-    },
-    "British Columbia": {
-      "Female": {
+    ],
+    "British Columbia": [
+      {
+        "group": "female",
         "0 to 19 years": "0",
         "20 to 29 years": "5",
         "30 to 39 years": "3",
@@ -27,7 +30,8 @@
         "50 to 59 years": "4",
         "60 years or more": "1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "1",
         "20 to 29 years": "9",
         "30 to 39 years": "25",
@@ -35,9 +39,10 @@
         "50 to 59 years": "20",
         "60 years or more": "10"
       }
-    },
-    "Alberta": {
-      "Female": {
+    ],
+    "Alberta": [
+      {
+        "group": "female",
         "0 to 19 years": "9",
         "20 to 29 years": "53",
         "30 to 39 years": "56",
@@ -45,7 +50,8 @@
         "50 to 59 years": "40",
         "60 years or more": "9"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "9",
         "20 to 29 years": "81",
         "30 to 39 years": "187",
@@ -53,9 +59,10 @@
         "50 to 59 years": "88",
         "60 years or more": "54"
       }
-    },
-    "Saskatchewan": {
-      "Female": {
+    ],
+    "Saskatchewan": [
+      {
+        "group": "female",
         "0 to 19 years": "1",
         "20 to 29 years": "2",
         "30 to 39 years": "2",
@@ -63,7 +70,8 @@
         "50 to 59 years": "1",
         "60 years or more": "2"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "0",
         "20 to 29 years": "3",
         "30 to 39 years": "7",
@@ -71,9 +79,10 @@
         "50 to 59 years": "5",
         "60 years or more": "0"
       }
-    },
-    "Manitoba": {
-      "Female": {
+    ],
+    "Manitoba": [
+      {
+        "group": "female",
         "0 to 19 years": "-2",
         "20 to 29 years": "-2",
         "30 to 39 years": "-2",
@@ -81,7 +90,8 @@
         "50 to 59 years": "-2",
         "60 years or more": "-2"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-2",
         "20 to 29 years": "-2",
         "30 to 39 years": "-2",
@@ -89,9 +99,10 @@
         "50 to 59 years": "-2",
         "60 years or more": "-2"
       }
-    },
-    "Ontario": {
-      "Female": {
+    ],
+    "Ontario": [
+      {
+        "group": "female",
         "0 to 19 years": "6",
         "20 to 29 years": "42",
         "30 to 39 years": "78",
@@ -99,7 +110,8 @@
         "50 to 59 years": "53",
         "60 years or more": "31"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "13",
         "20 to 29 years": "136",
         "30 to 39 years": "269",
@@ -107,9 +119,10 @@
         "50 to 59 years": "201",
         "60 years or more": "95"
       }
-    },
-    "Quebec": {
-      "Female": {
+    ],
+    "Quebec": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "7",
         "30 to 39 years": "11",
@@ -117,7 +130,8 @@
         "50 to 59 years": "14",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "23",
         "30 to 39 years": "38",
@@ -125,9 +139,10 @@
         "50 to 59 years": "50",
         "60 years or more": "-1"
       }
-    },
-    "New Brunswick": {
-      "Female": {
+    ],
+    "New Brunswick": [
+      {
+        "group": "female",
         "0 to 19 years": "0",
         "20 to 29 years": "0",
         "30 to 39 years": "1",
@@ -135,7 +150,8 @@
         "50 to 59 years": "2",
         "60 years or more": "0"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "0",
         "20 to 29 years": "3",
         "30 to 39 years": "1",
@@ -143,9 +159,10 @@
         "50 to 59 years": "1",
         "60 years or more": "1"
       }
-    },
-    "Nova Scotia": {
-      "Female": {
+    ],
+    "Nova Scotia": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "0",
         "30 to 39 years": "1",
@@ -153,7 +170,8 @@
         "50 to 59 years": "4",
         "60 years or more": "1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "2",
         "30 to 39 years": "5",
@@ -161,9 +179,10 @@
         "50 to 59 years": "3",
         "60 years or more": "5"
       }
-    },
-    "Prince Edward Island": {
-      "Female": {
+    ],
+    "Prince Edward Island": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -171,7 +190,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -179,9 +199,10 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    },
-    "Newfoundland and Labrador": {
-      "Female": {
+    ],
+    "Newfoundland and Labrador": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -189,7 +210,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -197,9 +219,10 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    },
-    "Yukon": {
-      "Female": {
+    ],
+    "Yukon": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -207,7 +230,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -215,9 +239,10 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    },
-    "Northwest Territories": {
-      "Female": {
+    ],
+    "Northwest Territories": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -225,7 +250,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -233,9 +259,10 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    },
-    "Nunavut": {
-      "Female": {
+    ],
+    "Nunavut": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -243,7 +270,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -251,11 +279,12 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    }
+    ]
   },
   "2021-01": {
-    "Canada": {
-      "Female": {
+    "Canada": [
+      {
+        "group": "female",
         "0 to 19 years": "35",
         "20 to 29 years": "347",
         "30 to 39 years": "496",
@@ -263,7 +292,8 @@
         "50 to 59 years": "275",
         "60 years or more": "91"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "63",
         "20 to 29 years": "735",
         "30 to 39 years": "1276",
@@ -271,9 +301,10 @@
         "50 to 59 years": "930",
         "60 years or more": "382"
       }
-    },
-    "British Columbia": {
-      "Female": {
+    ],
+    "British Columbia": [
+      {
+        "group": "female",
         "0 to 19 years": "4",
         "20 to 29 years": "25",
         "30 to 39 years": "34",
@@ -281,7 +312,8 @@
         "50 to 59 years": "33",
         "60 years or more": "8"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "6",
         "20 to 29 years": "63",
         "30 to 39 years": "116",
@@ -289,9 +321,10 @@
         "50 to 59 years": "131",
         "60 years or more": "68"
       }
-    },
-    "Alberta": {
-      "Female": {
+    ],
+    "Alberta": [
+      {
+        "group": "female",
         "0 to 19 years": "10",
         "20 to 29 years": "100",
         "30 to 39 years": "160",
@@ -299,7 +332,8 @@
         "50 to 59 years": "55",
         "60 years or more": "22"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "22",
         "20 to 29 years": "210",
         "30 to 39 years": "364",
@@ -307,9 +341,10 @@
         "50 to 59 years": "225",
         "60 years or more": "89"
       }
-    },
-    "Saskatchewan": {
-      "Female": {
+    ],
+    "Saskatchewan": [
+      {
+        "group": "female",
         "0 to 19 years": "3",
         "20 to 29 years": "35",
         "30 to 39 years": "26",
@@ -317,7 +352,8 @@
         "50 to 59 years": "14",
         "60 years or more": "7"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "1",
         "20 to 29 years": "35",
         "30 to 39 years": "45",
@@ -325,9 +361,10 @@
         "50 to 59 years": "47",
         "60 years or more": "17"
       }
-    },
-    "Manitoba": {
-      "Female": {
+    ],
+    "Manitoba": [
+      {
+        "group": "female",
         "0 to 19 years": "3",
         "20 to 29 years": "21",
         "30 to 39 years": "35",
@@ -335,7 +372,8 @@
         "50 to 59 years": "13",
         "60 years or more": "4"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "2",
         "20 to 29 years": "30",
         "30 to 39 years": "60",
@@ -343,9 +381,10 @@
         "50 to 59 years": "24",
         "60 years or more": "9"
       }
-    },
-    "Ontario": {
-      "Female": {
+    ],
+    "Ontario": [
+      {
+        "group": "female",
         "0 to 19 years": "14",
         "20 to 29 years": "150",
         "30 to 39 years": "211",
@@ -353,7 +392,8 @@
         "50 to 59 years": "135",
         "60 years or more": "49"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "32",
         "20 to 29 years": "349",
         "30 to 39 years": "591",
@@ -361,9 +401,10 @@
         "50 to 59 years": "415",
         "60 years or more": "191"
       }
-    },
-    "Quebec": {
-      "Female": {
+    ],
+    "Quebec": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "12",
         "30 to 39 years": "24",
@@ -371,7 +412,8 @@
         "50 to 59 years": "22",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "37",
         "30 to 39 years": "89",
@@ -379,9 +421,10 @@
         "50 to 59 years": "78",
         "60 years or more": "-1"
       }
-    },
-    "New Brunswick": {
-      "Female": {
+    ],
+    "New Brunswick": [
+      {
+        "group": "female",
         "0 to 19 years": "1",
         "20 to 29 years": "2",
         "30 to 39 years": "4",
@@ -389,7 +432,8 @@
         "50 to 59 years": "2",
         "60 years or more": "0"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "0",
         "20 to 29 years": "4",
         "30 to 39 years": "3",
@@ -397,9 +441,10 @@
         "50 to 59 years": "4",
         "60 years or more": "5"
       }
-    },
-    "Nova Scotia": {
-      "Female": {
+    ],
+    "Nova Scotia": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "2",
         "30 to 39 years": "2",
@@ -407,7 +452,8 @@
         "50 to 59 years": "1",
         "60 years or more": "1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "7",
         "30 to 39 years": "6",
@@ -415,9 +461,10 @@
         "50 to 59 years": "6",
         "60 years or more": "3"
       }
-    },
-    "Prince Edward Island": {
-      "Female": {
+    ],
+    "Prince Edward Island": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -425,7 +472,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -433,9 +481,10 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    },
-    "Newfoundland and Labrador": {
-      "Female": {
+    ],
+    "Newfoundland and Labrador": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -443,7 +492,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -451,9 +501,10 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    },
-    "Yukon": {
-      "Female": {
+    ],
+    "Yukon": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -461,7 +512,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -469,9 +521,10 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    },
-    "Northwest Territories": {
-      "Female": {
+    ],
+    "Northwest Territories": [
+      {
+        "group": "female",
         "0 to 19 years": "0",
         "20 to 29 years": "0",
         "30 to 39 years": "0",
@@ -479,7 +532,8 @@
         "50 to 59 years": "0",
         "60 years or more": "0"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "0",
         "20 to 29 years": "0",
         "30 to 39 years": "2",
@@ -487,9 +541,10 @@
         "50 to 59 years": "0",
         "60 years or more": "0"
       }
-    },
-    "Nunavut": {
-      "Female": {
+    ],
+    "Nunavut": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -497,7 +552,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -505,11 +561,12 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    }
+    ]
   },
   "2020-01": {
-    "Canada": {
-      "Female": {
+    "Canada": [
+      {
+        "group": "female",
         "0 to 19 years": "33",
         "20 to 29 years": "244",
         "30 to 39 years": "356",
@@ -517,7 +574,8 @@
         "50 to 59 years": "235",
         "60 years or more": "106"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "60",
         "20 to 29 years": "735",
         "30 to 39 years": "1119",
@@ -525,9 +583,10 @@
         "50 to 59 years": "846",
         "60 years or more": "341"
       }
-    },
-    "British Columbia": {
-      "Female": {
+    ],
+    "British Columbia": [
+      {
+        "group": "female",
         "0 to 19 years": "7",
         "20 to 29 years": "31",
         "30 to 39 years": "49",
@@ -535,7 +594,8 @@
         "50 to 59 years": "40",
         "60 years or more": "20"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "13",
         "20 to 29 years": "138",
         "30 to 39 years": "185",
@@ -543,9 +603,10 @@
         "50 to 59 years": "197",
         "60 years or more": "81"
       }
-    },
-    "Alberta": {
-      "Female": {
+    ],
+    "Alberta": [
+      {
+        "group": "female",
         "0 to 19 years": "7",
         "20 to 29 years": "58",
         "30 to 39 years": "69",
@@ -553,7 +614,8 @@
         "50 to 59 years": "52",
         "60 years or more": "13"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "16",
         "20 to 29 years": "170",
         "30 to 39 years": "263",
@@ -561,9 +623,10 @@
         "50 to 59 years": "171",
         "60 years or more": "70"
       }
-    },
-    "Saskatchewan": {
-      "Female": {
+    ],
+    "Saskatchewan": [
+      {
+        "group": "female",
         "0 to 19 years": "4",
         "20 to 29 years": "19",
         "30 to 39 years": "21",
@@ -571,7 +634,8 @@
         "50 to 59 years": "18",
         "60 years or more": "8"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "3",
         "20 to 29 years": "32",
         "30 to 39 years": "52",
@@ -579,9 +643,10 @@
         "50 to 59 years": "30",
         "60 years or more": "14"
       }
-    },
-    "Manitoba": {
-      "Female": {
+    ],
+    "Manitoba": [
+      {
+        "group": "female",
         "0 to 19 years": "3",
         "20 to 29 years": "21",
         "30 to 39 years": "25",
@@ -589,7 +654,8 @@
         "50 to 59 years": "12",
         "60 years or more": "6"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "0",
         "20 to 29 years": "27",
         "30 to 39 years": "53",
@@ -597,9 +663,10 @@
         "50 to 59 years": "23",
         "60 years or more": "9"
       }
-    },
-    "Ontario": {
-      "Female": {
+    ],
+    "Ontario": [
+      {
+        "group": "female",
         "0 to 19 years": "11",
         "20 to 29 years": "103",
         "30 to 39 years": "165",
@@ -607,7 +674,8 @@
         "50 to 59 years": "98",
         "60 years or more": "40"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "22",
         "20 to 29 years": "329",
         "30 to 39 years": "518",
@@ -615,9 +683,10 @@
         "50 to 59 years": "380",
         "60 years or more": "137"
       }
-    },
-    "Quebec": {
-      "Female": {
+    ],
+    "Quebec": [
+      {
+        "group": "female",
         "0 to 19 years": "1",
         "20 to 29 years": "7",
         "30 to 39 years": "20",
@@ -625,7 +694,8 @@
         "50 to 59 years": "11",
         "60 years or more": "14"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "6",
         "20 to 29 years": "29",
         "30 to 39 years": "40",
@@ -633,9 +703,10 @@
         "50 to 59 years": "35",
         "60 years or more": "25"
       }
-    },
-    "New Brunswick": {
-      "Female": {
+    ],
+    "New Brunswick": [
+      {
+        "group": "female",
         "0 to 19 years": "0",
         "20 to 29 years": "3",
         "30 to 39 years": "4",
@@ -643,7 +714,8 @@
         "50 to 59 years": "3",
         "60 years or more": "3"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "0",
         "20 to 29 years": "2",
         "30 to 39 years": "2",
@@ -651,9 +723,10 @@
         "50 to 59 years": "6",
         "60 years or more": "4"
       }
-    },
-    "Nova Scotia": {
-      "Female": {
+    ],
+    "Nova Scotia": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "2",
         "30 to 39 years": "3",
@@ -661,7 +734,8 @@
         "50 to 59 years": "1",
         "60 years or more": "2"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "8",
         "30 to 39 years": "6",
@@ -669,9 +743,10 @@
         "50 to 59 years": "4",
         "60 years or more": "1"
       }
-    },
-    "Prince Edward Island": {
-      "Female": {
+    ],
+    "Prince Edward Island": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -679,7 +754,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -687,9 +763,10 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    },
-    "Newfoundland and Labrador": {
-      "Female": {
+    ],
+    "Newfoundland and Labrador": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -697,7 +774,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -705,9 +783,10 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    },
-    "Yukon": {
-      "Female": {
+    ],
+    "Yukon": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -715,7 +794,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -723,9 +803,10 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    },
-    "Northwest Territories": {
-      "Female": {
+    ],
+    "Northwest Territories": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -733,7 +814,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -741,9 +823,10 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    },
-    "Nunavut": {
-      "Female": {
+    ],
+    "Nunavut": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -751,7 +834,8 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "-1",
         "30 to 39 years": "-1",
@@ -759,11 +843,12 @@
         "50 to 59 years": "-1",
         "60 years or more": "-1"
       }
-    }
+    ]
   },
   "2019-01": {
-    "Canada": {
-      "Female": {
+    "Canada": [
+      {
+        "group": "female",
         "0 to 19 years": "24",
         "20 to 29 years": "152",
         "30 to 39 years": "228",
@@ -771,7 +856,8 @@
         "50 to 59 years": "209",
         "60 years or more": "62"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "29",
         "20 to 29 years": "444",
         "30 to 39 years": "627",
@@ -779,9 +865,10 @@
         "50 to 59 years": "418",
         "60 years or more": "183"
       }
-    },
-    "British Columbia": {
-      "Female": {
+    ],
+    "British Columbia": [
+      {
+        "group": "female",
         "0 to 19 years": "9",
         "20 to 29 years": "22",
         "30 to 39 years": "41",
@@ -789,7 +876,8 @@
         "50 to 59 years": "30",
         "60 years or more": "7"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "5",
         "20 to 29 years": "78",
         "30 to 39 years": "122",
@@ -797,9 +885,10 @@
         "50 to 59 years": "79",
         "60 years or more": "41"
       }
-    },
-    "Alberta": {
-      "Female": {
+    ],
+    "Alberta": [
+      {
+        "group": "female",
         "0 to 19 years": "7",
         "20 to 29 years": "40",
         "30 to 39 years": "45",
@@ -807,7 +896,8 @@
         "50 to 59 years": "33",
         "60 years or more": "10"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "6",
         "20 to 29 years": "100",
         "30 to 39 years": "147",
@@ -815,9 +905,10 @@
         "50 to 59 years": "79",
         "60 years or more": "24"
       }
-    },
-    "Saskatchewan": {
-      "Female": {
+    ],
+    "Saskatchewan": [
+      {
+        "group": "female",
         "0 to 19 years": "0",
         "20 to 29 years": "8",
         "30 to 39 years": "7",
@@ -825,7 +916,8 @@
         "50 to 59 years": "11",
         "60 years or more": "1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "1",
         "20 to 29 years": "13",
         "30 to 39 years": "18",
@@ -833,9 +925,10 @@
         "50 to 59 years": "19",
         "60 years or more": "5"
       }
-    },
-    "Manitoba": {
-      "Female": {
+    ],
+    "Manitoba": [
+      {
+        "group": "female",
         "0 to 19 years": "1",
         "20 to 29 years": "4",
         "30 to 39 years": "5",
@@ -843,7 +936,8 @@
         "50 to 59 years": "4",
         "60 years or more": "1"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "0",
         "20 to 29 years": "11",
         "30 to 39 years": "12",
@@ -851,9 +945,10 @@
         "50 to 59 years": "6",
         "60 years or more": "1"
       }
-    },
-    "Ontario": {
-      "Female": {
+    ],
+    "Ontario": [
+      {
+        "group": "female",
         "0 to 19 years": "6",
         "20 to 29 years": "77",
         "30 to 39 years": "116",
@@ -861,7 +956,8 @@
         "50 to 59 years": "103",
         "60 years or more": "25"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "15",
         "20 to 29 years": "215",
         "30 to 39 years": "299",
@@ -869,9 +965,10 @@
         "50 to 59 years": "210",
         "60 years or more": "89"
       }
-    },
-    "Quebec": {
-      "Female": {
+    ],
+    "Quebec": [
+      {
+        "group": "female",
         "0 to 19 years": "1",
         "20 to 29 years": "0",
         "30 to 39 years": "6",
@@ -879,7 +976,8 @@
         "50 to 59 years": "20",
         "60 years or more": "12"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "2",
         "20 to 29 years": "19",
         "30 to 39 years": "19",
@@ -887,9 +985,10 @@
         "50 to 59 years": "19",
         "60 years or more": "16"
       }
-    },
-    "New Brunswick": {
-      "Female": {
+    ],
+    "New Brunswick": [
+      {
+        "group": "female",
         "0 to 19 years": "0",
         "20 to 29 years": "1",
         "30 to 39 years": "4",
@@ -897,7 +996,8 @@
         "50 to 59 years": "5",
         "60 years or more": "3"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "0",
         "20 to 29 years": "1",
         "30 to 39 years": "4",
@@ -905,9 +1005,10 @@
         "50 to 59 years": "1",
         "60 years or more": "3"
       }
-    },
-    "Nova Scotia": {
-      "Female": {
+    ],
+    "Nova Scotia": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "0",
         "30 to 39 years": "4",
@@ -915,7 +1016,8 @@
         "50 to 59 years": "3",
         "60 years or more": "3"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "7",
         "30 to 39 years": "6",
@@ -923,11 +1025,12 @@
         "50 to 59 years": "5",
         "60 years or more": "4"
       }
-    }
+    ]
   },
   "2018-01": {
-    "Canada": {
-      "Female": {
+    "Canada": [
+      {
+        "group": "female",
         "0 to 19 years": "20",
         "20 to 29 years": "206",
         "30 to 39 years": "265",
@@ -935,7 +1038,8 @@
         "50 to 59 years": "193",
         "60 years or more": "85"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "41",
         "20 to 29 years": "572",
         "30 to 39 years": "798",
@@ -943,9 +1047,10 @@
         "50 to 59 years": "597",
         "60 years or more": "218"
       }
-    },
-    "British Columbia": {
-      "Female": {
+    ],
+    "British Columbia": [
+      {
+        "group": "female",
         "0 to 19 years": "4",
         "20 to 29 years": "57",
         "30 to 39 years": "75",
@@ -953,7 +1058,8 @@
         "50 to 59 years": "52",
         "60 years or more": "22"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "20",
         "20 to 29 years": "200",
         "30 to 39 years": "280",
@@ -961,9 +1067,10 @@
         "50 to 59 years": "248",
         "60 years or more": "87"
       }
-    },
-    "Alberta": {
-      "Female": {
+    ],
+    "Alberta": [
+      {
+        "group": "female",
         "0 to 19 years": "9",
         "20 to 29 years": "51",
         "30 to 39 years": "55",
@@ -971,7 +1078,8 @@
         "50 to 59 years": "36",
         "60 years or more": "12"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "6",
         "20 to 29 years": "146",
         "30 to 39 years": "181",
@@ -979,9 +1087,10 @@
         "50 to 59 years": "105",
         "60 years or more": "40"
       }
-    },
-    "Saskatchewan": {
-      "Female": {
+    ],
+    "Saskatchewan": [
+      {
+        "group": "female",
         "0 to 19 years": "0",
         "20 to 29 years": "11",
         "30 to 39 years": "12",
@@ -989,7 +1098,8 @@
         "50 to 59 years": "13",
         "60 years or more": "3"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "0",
         "20 to 29 years": "16",
         "30 to 39 years": "16",
@@ -997,9 +1107,10 @@
         "50 to 59 years": "10",
         "60 years or more": "10"
       }
-    },
-    "Ontario": {
-      "Female": {
+    ],
+    "Ontario": [
+      {
+        "group": "female",
         "0 to 19 years": "7",
         "20 to 29 years": "77",
         "30 to 39 years": "106",
@@ -1007,7 +1118,8 @@
         "50 to 59 years": "70",
         "60 years or more": "32"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "14",
         "20 to 29 years": "187",
         "30 to 39 years": "280",
@@ -1015,9 +1127,10 @@
         "50 to 59 years": "204",
         "60 years or more": "69"
       }
-    },
-    "Quebec": {
-      "Female": {
+    ],
+    "Quebec": [
+      {
+        "group": "female",
         "0 to 19 years": "0",
         "20 to 29 years": "5",
         "30 to 39 years": "9",
@@ -1025,7 +1138,8 @@
         "50 to 59 years": "16",
         "60 years or more": "12"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "1",
         "20 to 29 years": "15",
         "30 to 39 years": "32",
@@ -1033,9 +1147,10 @@
         "50 to 59 years": "19",
         "60 years or more": "7"
       }
-    },
-    "New Brunswick": {
-      "Female": {
+    ],
+    "New Brunswick": [
+      {
+        "group": "female",
         "0 to 19 years": "0",
         "20 to 29 years": "2",
         "30 to 39 years": "3",
@@ -1043,7 +1158,8 @@
         "50 to 59 years": "5",
         "60 years or more": "2"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "0",
         "20 to 29 years": "0",
         "30 to 39 years": "2",
@@ -1051,9 +1167,10 @@
         "50 to 59 years": "3",
         "60 years or more": "1"
       }
-    },
-    "Nova Scotia": {
-      "Female": {
+    ],
+    "Nova Scotia": [
+      {
+        "group": "female",
         "0 to 19 years": "-1",
         "20 to 29 years": "3",
         "30 to 39 years": "5",
@@ -1061,7 +1178,8 @@
         "50 to 59 years": "1",
         "60 years or more": "2"
       },
-      "Male": {
+      {
+        "group": "male",
         "0 to 19 years": "-1",
         "20 to 29 years": "8",
         "30 to 39 years": "7",
@@ -1069,6 +1187,6 @@
         "50 to 59 years": "8",
         "60 years or more": "4"
       }
-    }
+    ]
   }
 }
