@@ -6,7 +6,7 @@
   font-size: 20px;
   /* padding 5 margin 5 */
   font-family: sans-serif;
-  fill: white;
+  fill: black;
 }
 
 .treemapTooltip {
@@ -27,13 +27,13 @@
   top: 140px;
   left: 50px;
   background: #f08080;
-  padding-right: 26px;
+  /* padding-right: 26px; */
   border-radius: 3px;
   border: none;
   color: white;
   margin: 0;
   padding: 0 12px;
-  width: 60px;
+  /* width: 60px; */
   cursor: pointer;
   height: 30px;
 }
@@ -53,13 +53,13 @@
 }
 
 .track {
-  stroke: #000;
+  stroke: #ddd;
   stroke-opacity: 0.3;
-  stroke-width: 10px;
+  stroke-width: 30px;
 }
 
 .track-inset {
-  stroke: #dcdcdc;
+  stroke: #fff;
   stroke-width: 8px;
 }
 

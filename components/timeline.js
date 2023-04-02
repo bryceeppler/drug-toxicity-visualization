@@ -80,11 +80,12 @@ slider
 var handle = slider
   .insert("circle", ".track-overlay")
   .attr("class", "handle")
-  .attr("r", 9);
+  .attr("r", 8);
 
 var label = slider
   .append("text")
   .attr("class", "label")
+  // make text black
   .attr("text-anchor", "middle")
   .text(formatDate(startDate))
   .attr("transform", "translate(0," + -25 + ")");
