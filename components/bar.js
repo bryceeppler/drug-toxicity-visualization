@@ -1,8 +1,8 @@
 var testyy = "testyy";
 // set the dimensions and margins of the graph
-var margin = { top: 30, right: 30, bottom: 20, left: 50 },
-  width = 370 - margin.left - margin.right,
-  height = 280 - margin.top - margin.bottom;
+var margin = { top: 30, right: 140, bottom: 20, left: 50 },
+  width = 470 - margin.left - margin.right,
+  height = 380 - margin.top - margin.bottom;
 const barSvg = d3
   .select("#bar")
   .attr("width", width + margin.left + margin.right)
@@ -130,5 +130,79 @@ bars.selectAll("rect").transition().duration(300)
 .attr("y", (d) => y(d.value))
 .attr("height", (d) => height - y(d.value))
 // .delay((d,i) => {console.log(i); return 10})
+// Legend
+const legend = barSvg
+  .append("g")
+  .attr("class", "legend")
+  .attr("transform", `translate(${width - margin.right}, 0)`);
+
+const legendData = subgroups.map((d, i) => ({
+  age: d,
+  colorMale: blueRange[i],
+  colorFemale: redRange[i],
+}));
+
+// Add headers for the legend
+legend
+  .append("text")
+  .attr("x", 0)
+  .attr("y", 0)
+  .text("Age range")
+  .attr("font-size", "12px")
+  .attr("fill", "black");
+
+legend
+  .append("text")
+  .attr("x", 125)
+  .attr("y", 0)
+  .text("Male")
+  .attr("font-size", "12px")
+  .attr("fill", "black");
+
+legend
+  .append("text")
+  .attr("x", 180)
+  .attr("y", 0)
+  .text("Female")
+  .attr("font-size", "12px")
+  .attr("fill", "black");
+
+// Add age ranges and color squares for male and female
+legend
+  .selectAll("rect.male")
+  .data(legendData)
+  .enter()
+  .append("rect")
+  .attr("class", "male")
+  .attr("x", 125)
+  .attr("y", (d, i) => (i + 1) * 15)
+  .attr("width", 10)
+  .attr("height", 10)
+  .attr("fill", (d) => d.colorMale);
+
+legend
+  .selectAll("rect.female")
+  .data(legendData)
+  .enter()
+  .append("rect")
+  .attr("class", "female")
+  .attr("x", 180)
+  .attr("y", (d, i) => (i + 1) * 15)
+  .attr("width", 10)
+  .attr("height", 10)
+  .attr("fill", (d) => d.colorFemale);
+
+legend
+  .selectAll("text.age")
+  .data(legendData)
+  .enter()
+  .append("text")
+  .attr("class", "age")
+  .attr("x", 0)
+  .attr("y", (d, i) => (i + 1) * 15 + 9)
+  .text((d) => d.age)
+  .attr("font-size", "12px")
+  .attr("fill", "black");
+
 }
 
