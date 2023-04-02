@@ -157,10 +157,50 @@ function drawMap(date) {
     .on("mouseleave", mouseLeave)
     .on("mouseout", mouseOut)
     .on("mousemove", showMapTooltip);
-
-    // mapSvg
-    // .selectAll(".Province")
-    // .on("mouseover", mouseOver)
-    // .on("mousemove", showMapTooltip)
-    // .on("mouseleave", mouseLeave);
 }
+function createMapLegend() {
+  const legendSvg = d3
+    .select("#mapLegend")
+    .append("svg")
+    .attr("width", 300)
+    .attr("height", 200);
+
+  const colorDomain = [0, 20, 90, 150, 200, 300, 500];
+  const legendLabels = [
+    "0 - 19",
+    "20 - 89",
+    "90 - 149",
+    "150 - 199",
+    "200 - 299",
+    "300 - 499",
+    "500+",
+    "No data",
+  ];
+
+  const legendColors = colorScale.range().concat("lightcoral");
+
+  const legend = legendSvg
+    .selectAll(".legend")
+    .data(legendColors)
+    .enter()
+    .append("g")
+    .attr("class", "legend")
+    .attr("transform", (d, i) => `translate(0, ${i * 20})`);
+
+  legend
+    .append("rect")
+    .attr("x", 20)
+    .attr("width", 18)
+    .attr("height", 18)
+    .style("fill", (d) => d);
+
+  legend
+    .append("text")
+    .attr("x", 45)
+    .attr("y", 9)
+    .attr("dy", ".35em")
+    .style("text-anchor", "start")
+    .text((d, i) => legendLabels[i]);
+}
+
+createMapLegend();

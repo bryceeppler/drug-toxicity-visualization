@@ -110,7 +110,6 @@ d3.csv("data/timelinedata.csv", prepare).then(function (data) {
     if (button.text() == "Pause") {
       moving = false;
       clearInterval(timer);
-      // timer = 0;
       button.text("Play");
     } else {
       moving = true;
@@ -133,7 +132,6 @@ function step() {
     moving = false;
     currentValue = 0;
     clearInterval(timer);
-    // timer = 0;
     playButton.text("Play");
   }
 }
@@ -144,15 +142,14 @@ function drawPlot(data) {
     .scaleLinear()
     .domain([600, 2400])
     .range(["#F6EBEB", "#e00000"]);
-  // if filtered dataset has more circles than already existing, transition new ones in
   locations
     .enter()
-    .append("circle")
+    .append("rect")
     .attr("class", "location")
-    .attr("cx", function (d) {
-      return x(d.date);
+    .attr("x", function (d) {
+      return x(d.date) - 7;
     })
-    .attr("cy", height / 2)
+    .attr("y", 35)
     .style("fill", function (d) {
       return d3.hsl(colorScale(d.val));
     })
@@ -160,24 +157,24 @@ function drawPlot(data) {
       return d3.hsl(colorScale(d.val));
     })
     .style("opacity", 0.5)
-    .attr("r", 8)
+    .attr("width", 14)
+    .attr("height", 14)
     .transition()
     .duration(400)
-    .attr("r", 25)
+    .attr("width", 25)
+    .attr("height", 25)
     .transition()
-    .attr("r", 14);
+    .attr("width", 25)
+    .attr("height", 10);
 
-  // if filtered dataset has less circles than already existing, remove excess
   locations.exit().remove();
 }
 
+
 function update(h) {
   // TODO update all the things
-  // DRAW MAP
-  // console.log(h)
   let tempYear = h.getFullYear();
   let tempMonth = h.getMonth();
-  // if temp month in is the first quarter, set it to 1
   if (tempMonth < 3) {
     tempMonth = 1;
   } else if (tempMonth < 6) {
@@ -187,20 +184,16 @@ function update(h) {
   } else {
     tempMonth = 10;
   }
-  // temp month must have a leading 0 if it is less than 10
   let tempYearMonth = tempYear + "-" + (tempMonth < 10 ? "0" : "") + tempMonth;
   
   selectedDate = tempYearMonth;
   drawMap(selectedDate);
-  // DRAW BAR CHART
   drawBar(selectedDate, "Canada")
-  // DRAW TREEMAP
   drawTreemap(selectedDate)
   // update position and text of label according to slider scale
   handle.attr("cx", x(h));
   label.attr("x", x(h)).text(formatDate(h));
 
-  // filter data set and redraw plot
   var newData = dataset.filter(function (d) {
     return d.date < h;
   });
