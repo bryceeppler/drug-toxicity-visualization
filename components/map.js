@@ -20,6 +20,30 @@ var mapSvg = d3.select("#map"),
   width = +mapSvg.attr("width"),
   height = +mapSvg.attr("height");
 
+const mapTooltip = d3.select("body")
+  .append("div")
+  .attr("class", "mapTooltip")
+  .style("opacity", 0)
+  .style("position", "absolute")
+  .style("background-color", "#f9f9f9")
+  .style("border", "1px solid #d3d3d3")
+  .style("border-radius", "4px")
+  .style("padding", "4px")
+  .style("font-size", "12px")
+  .style("pointer-events", "none");
+
+  function showMapTooltip(event, d) {
+    mapTooltip
+      .style("opacity", 1)
+      .html(`Province: ${d.properties.name}<br/>Value: ${d.total}`)
+      .style("left", event.pageX + 10 + "px")
+      .style("top", event.pageY - 15 + "px");
+  }
+  
+  function hideMapTooltip() {
+    mapTooltip.style("opacity", 0);
+  }
+
 // Map and projection
 var path = d3.geoPath();
 var projection = d3
@@ -56,6 +80,8 @@ let mouseOver = function (d) {
     .duration(200)
     .style("opacity", 1)
     .style("stroke", "black");
+    showMapTooltip(d3.event, d);
+
 };
 
 let mouseOut = function (d) {
@@ -69,6 +95,8 @@ let mouseLeave = function (d) {
     .style("opacity", 0.8)
     .style("stroke", "transparent");
   d3.select(this).transition().duration(200).style("stroke", "transparent");
+  hideMapTooltip();
+
 };
 function ready() {
   // Draw the map
@@ -92,6 +120,11 @@ function ready() {
     .on("mouseover", mouseOver)
     .on("mouseleave", mouseLeave)
     .on("mouseout", mouseOut);
+
+    mapSvg.selectAll(".Province")
+    .on("mouseover", mouseOver)
+    .on("mousemove", showMapTooltip)
+    .on("mouseleave", mouseLeave);
 }
 
 function drawMap(date) {
@@ -122,5 +155,12 @@ function drawMap(date) {
     .selectAll(".Province")
     .on("mouseover", mouseOver)
     .on("mouseleave", mouseLeave)
-    .on("mouseout", mouseOut);
+    .on("mouseout", mouseOut)
+    .on("mousemove", showMapTooltip);
+
+    // mapSvg
+    // .selectAll(".Province")
+    // .on("mouseover", mouseOver)
+    // .on("mousemove", showMapTooltip)
+    // .on("mouseleave", mouseLeave);
 }
