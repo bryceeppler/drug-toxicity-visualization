@@ -195,7 +195,7 @@ function update(h) {
   // DRAW BAR CHART
   drawBar(selectedDate, "Canada")
   // DRAW TREEMAP
-
+  drawTreemap(selectedDate)
   // update position and text of label according to slider scale
   handle.attr("cx", x(h));
   label.attr("x", x(h)).text(formatDate(h));

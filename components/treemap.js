@@ -3,8 +3,6 @@ const treemapHeight = 600;
 const format = d3.format(",d");
 const color = d3.scaleOrdinal(d3.schemeCategory10);
 
-
-
 const treemap = (data) =>
   d3.treemap().size([treemapWidth, treemapHeight]).padding(1).round(true)(
     d3
@@ -23,8 +21,8 @@ const tooltip = d3
   .attr("class", "tooltip")
   .style("opacity", 0);
 
-d3.json("data/treemapData.json").then((data) => {
-  const root = treemap(data['2016-01']);
+function drawTreemap(date) {
+  const root = treemap(treemapData[date]);
 
   const cell = treemapSvg
     .selectAll("g")
@@ -56,7 +54,11 @@ d3.json("data/treemapData.json").then((data) => {
     .attr("class", "label")
     .attr("x", 5)
     .attr("y", 20)
-    // if the deaths are less than 250, dont show the label
+    // if the deaths are less than 70, don't show the label
     .text((d) => (d.value < 70 ? "" : d.data.name));
-  // .text((d) => d.data.name);
+}
+let treemapData;
+d3.json("data/treemapData.json").then((data) => {
+  treemapData = data;
+  drawTreemap('2016-01');
 });
