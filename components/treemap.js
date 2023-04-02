@@ -3,63 +3,7 @@ const treemapHeight = 600;
 const format = d3.format(",d");
 const color = d3.scaleOrdinal(d3.schemeCategory10);
 
-const dummyTreemapData = {
-  name: "Canada",
-  children: [
-    {
-      name: "Alberta",
-      value: 250,
-    },
-    {
-      name: "British Columbia",
-      value: 150,
-    },
-    {
-      name: "Manitoba",
-      value: 50,
-    },
-    {
-      name: "New Brunswick",
-      value: 10,
-    },
-    {
-      name: "Newfoundland and Labrador",
-      value: 5,
-    },
-    {
-      name: "Northwest Territories",
-      value: 2,
-    },
-    {
-      name: "Nova Scotia",
-      value: 30,
-    },
-    {
-      name: "Nunavut",
-      value: 1,
-    },
-    {
-      name: "Ontario",
-      value: 500,
-    },
-    {
-      name: "Prince Edward Island",
-      value: 3,
-    },
-    {
-      name: "Quebec",
-      value: 350,
-    },
-    {
-      name: "Saskatchewan",
-      value: 80,
-    },
-    {
-      name: "Yukon",
-      value: 1,
-    },
-  ],
-};
+
 
 const treemap = (data) =>
   d3.treemap().size([treemapWidth, treemapHeight]).padding(1).round(true)(
@@ -79,8 +23,8 @@ const tooltip = d3
   .attr("class", "tooltip")
   .style("opacity", 0);
 
-d3.json("data/exampleTreemapData.json").then((data) => {
-  const root = treemap(data);
+d3.json("data/treemapData.json").then((data) => {
+  const root = treemap(data['2016-01']);
 
   const cell = treemapSvg
     .selectAll("g")

@@ -1,0 +1,496 @@
+{
+  "2016-01": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 1243 },
+      { "name": "British Columbia", "value": 344 },
+      { "name": "Alberta", "value": 255 },
+      { "name": "Saskatchewan", "value": 50 },
+      { "name": "Manitoba", "value": 29 },
+      { "name": "Ontario", "value": 388 },
+      { "name": "Quebec", "value": 120 },
+      { "name": "New Brunswick", "value": 23 },
+      { "name": "Nova Scotia", "value": 31 },
+      { "name": "Prince Edward Island", "value": -4 },
+      { "name": "Newfoundland and Labrador", "value": -2 },
+      { "name": "Yukon", "value": 0 },
+      { "name": "Northwest Territories", "value": 3 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2016-04": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 1188 },
+      { "name": "British Columbia", "value": 314 },
+      { "name": "Alberta", "value": 270 },
+      { "name": "Saskatchewan", "value": 31 },
+      { "name": "Manitoba", "value": 34 },
+      { "name": "Ontario", "value": 398 },
+      { "name": "Quebec", "value": 108 },
+      { "name": "New Brunswick", "value": 7 },
+      { "name": "Nova Scotia", "value": 22 },
+      { "name": "Prince Edward Island", "value": -4 },
+      { "name": "Newfoundland and Labrador", "value": -2 },
+      { "name": "Yukon", "value": 4 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2016-07": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 1219 },
+      { "name": "British Columbia", "value": 300 },
+      { "name": "Alberta", "value": 303 },
+      { "name": "Saskatchewan", "value": 46 },
+      { "name": "Manitoba", "value": 30 },
+      { "name": "Ontario", "value": 369 },
+      { "name": "Quebec", "value": 111 },
+      { "name": "New Brunswick", "value": 16 },
+      { "name": "Nova Scotia", "value": 32 },
+      { "name": "Prince Edward Island", "value": -4 },
+      { "name": "Newfoundland and Labrador", "value": 7 },
+      { "name": "Yukon", "value": 2 },
+      { "name": "Northwest Territories", "value": 2 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2016-10": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 1621 },
+      { "name": "British Columbia", "value": 636 },
+      { "name": "Alberta", "value": 321 },
+      { "name": "Saskatchewan", "value": 32 },
+      { "name": "Manitoba", "value": 56 },
+      { "name": "Ontario", "value": 438 },
+      { "name": "Quebec", "value": 100 },
+      { "name": "New Brunswick", "value": 15 },
+      { "name": "Nova Scotia", "value": 8 },
+      { "name": "Prince Edward Island", "value": -4 },
+      { "name": "Newfoundland and Labrador", "value": 4 },
+      { "name": "Yukon", "value": 6 },
+      { "name": "Northwest Territories", "value": 4 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2017-01": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 1740 },
+      { "name": "British Columbia", "value": 702 },
+      { "name": "Alberta", "value": 314 },
+      { "name": "Saskatchewan", "value": 47 },
+      { "name": "Manitoba", "value": 60 },
+      { "name": "Ontario", "value": 429 },
+      { "name": "Quebec", "value": 109 },
+      { "name": "New Brunswick", "value": 18 },
+      { "name": "Nova Scotia", "value": 36 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": 18 },
+      { "name": "Yukon", "value": 7 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2017-04": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 1935 },
+      { "name": "British Columbia", "value": 723 },
+      { "name": "Alberta", "value": 343 },
+      { "name": "Saskatchewan", "value": 37 },
+      { "name": "Manitoba", "value": 61 },
+      { "name": "Ontario", "value": 587 },
+      { "name": "Quebec", "value": 131 },
+      { "name": "New Brunswick", "value": 14 },
+      { "name": "Nova Scotia", "value": 33 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": 5 },
+      { "name": "Yukon", "value": 0 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2017-07": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 2026 },
+      { "name": "British Columbia", "value": 623 },
+      { "name": "Alberta", "value": 354 },
+      { "name": "Saskatchewan", "value": 41 },
+      { "name": "Manitoba", "value": 37 },
+      { "name": "Ontario", "value": 794 },
+      { "name": "Quebec", "value": 117 },
+      { "name": "New Brunswick", "value": 15 },
+      { "name": "Nova Scotia", "value": 25 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": 16 },
+      { "name": "Yukon", "value": 2 },
+      { "name": "Northwest Territories", "value": 2 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2017-10": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 1757 },
+      { "name": "British Columbia", "value": 520 },
+      { "name": "Alberta", "value": 416 },
+      { "name": "Saskatchewan", "value": 34 },
+      { "name": "Manitoba", "value": 35 },
+      { "name": "Ontario", "value": 582 },
+      { "name": "Quebec", "value": 108 },
+      { "name": "New Brunswick", "value": 23 },
+      { "name": "Nova Scotia", "value": 28 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": 6 },
+      { "name": "Yukon", "value": 4 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2018-01": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 1918 },
+      { "name": "British Columbia", "value": 710 },
+      { "name": "Alberta", "value": 387 },
+      { "name": "Saskatchewan", "value": 65 },
+      { "name": "Manitoba", "value": 36 },
+      { "name": "Ontario", "value": 583 },
+      { "name": "Quebec", "value": 91 },
+      { "name": "New Brunswick", "value": 15 },
+      { "name": "Nova Scotia", "value": 29 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": -2 },
+      { "name": "Yukon", "value": 0 },
+      { "name": "Northwest Territories", "value": 2 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2018-04": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 1884 },
+      { "name": "British Columbia", "value": 626 },
+      { "name": "Alberta", "value": 412 },
+      { "name": "Saskatchewan", "value": 53 },
+      { "name": "Manitoba", "value": 31 },
+      { "name": "Ontario", "value": 630 },
+      { "name": "Quebec", "value": 90 },
+      { "name": "New Brunswick", "value": 8 },
+      { "name": "Nova Scotia", "value": 34 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": -2 },
+      { "name": "Yukon", "value": 0 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2018-07": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 2123 },
+      { "name": "British Columbia", "value": 717 },
+      { "name": "Alberta", "value": 417 },
+      { "name": "Saskatchewan", "value": 64 },
+      { "name": "Manitoba", "value": 46 },
+      { "name": "Ontario", "value": 771 },
+      { "name": "Quebec", "value": 69 },
+      { "name": "New Brunswick", "value": 14 },
+      { "name": "Nova Scotia", "value": 18 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": -2 },
+      { "name": "Yukon", "value": 5 },
+      { "name": "Northwest Territories", "value": 2 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2018-10": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 2144 },
+      { "name": "British Columbia", "value": 627 },
+      { "name": "Alberta", "value": 388 },
+      { "name": "Saskatchewan", "value": 58 },
+      { "name": "Manitoba", "value": 58 },
+      { "name": "Ontario", "value": 861 },
+      { "name": "Quebec", "value": 110 },
+      { "name": "New Brunswick", "value": 16 },
+      { "name": "Nova Scotia", "value": 22 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": -2 },
+      { "name": "Yukon", "value": 4 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2019-01": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 2007 },
+      { "name": "British Columbia", "value": 598 },
+      { "name": "Alberta", "value": 323 },
+      { "name": "Saskatchewan", "value": 48 },
+      { "name": "Manitoba", "value": 17 },
+      { "name": "Ontario", "value": 880 },
+      { "name": "Quebec", "value": 90 },
+      { "name": "New Brunswick", "value": 11 },
+      { "name": "Nova Scotia", "value": 24 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": 13 },
+      { "name": "Yukon", "value": 2 },
+      { "name": "Northwest Territories", "value": 1 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2019-04": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 2042 },
+      { "name": "British Columbia", "value": 495 },
+      { "name": "Alberta", "value": 370 },
+      { "name": "Saskatchewan", "value": 67 },
+      { "name": "Manitoba", "value": 29 },
+      { "name": "Ontario", "value": 931 },
+      { "name": "Quebec", "value": 99 },
+      { "name": "New Brunswick", "value": 13 },
+      { "name": "Nova Scotia", "value": 32 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": 5 },
+      { "name": "Yukon", "value": 0 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2019-07": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 1414 },
+      { "name": "British Columbia", "value": 444 },
+      { "name": "Alberta", "value": 303 },
+      { "name": "Saskatchewan", "value": 45 },
+      { "name": "Manitoba", "value": 21 },
+      { "name": "Ontario", "value": 465 },
+      { "name": "Quebec", "value": 87 },
+      { "name": "New Brunswick", "value": 26 },
+      { "name": "Nova Scotia", "value": 23 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": -2 },
+      { "name": "Yukon", "value": 0 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2019-10": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 1659 },
+      { "name": "British Columbia", "value": 450 },
+      { "name": "Alberta", "value": 249 },
+      { "name": "Saskatchewan", "value": 66 },
+      { "name": "Manitoba", "value": 49 },
+      { "name": "Ontario", "value": 714 },
+      { "name": "Quebec", "value": 90 },
+      { "name": "New Brunswick", "value": 12 },
+      { "name": "Nova Scotia", "value": 23 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": -2 },
+      { "name": "Yukon", "value": 6 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2020-01": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 2014 },
+      { "name": "British Columbia", "value": 563 },
+      { "name": "Alberta", "value": 314 },
+      { "name": "Saskatchewan", "value": 50 },
+      { "name": "Manitoba", "value": 50 },
+      { "name": "Ontario", "value": 914 },
+      { "name": "Quebec", "value": 94 },
+      { "name": "New Brunswick", "value": 9 },
+      { "name": "Nova Scotia", "value": 14 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": -2 },
+      { "name": "Yukon", "value": 6 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2020-04": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 3300 },
+      { "name": "British Columbia", "value": 993 },
+      { "name": "Alberta", "value": 631 },
+      { "name": "Saskatchewan", "value": 141 },
+      { "name": "Manitoba", "value": 108 },
+      { "name": "Ontario", "value": 1230 },
+      { "name": "Quebec", "value": 131 },
+      { "name": "New Brunswick", "value": 19 },
+      { "name": "Nova Scotia", "value": 24 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": 17 },
+      { "name": "Yukon", "value": 6 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2020-07": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 3491 },
+      { "name": "British Columbia", "value": 973 },
+      { "name": "Alberta", "value": 715 },
+      { "name": "Saskatchewan", "value": 162 },
+      { "name": "Manitoba", "value": 188 },
+      { "name": "Ontario", "value": 1233 },
+      { "name": "Quebec", "value": 167 },
+      { "name": "New Brunswick", "value": 21 },
+      { "name": "Nova Scotia", "value": 20 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": 5 },
+      { "name": "Yukon", "value": 6 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2020-10": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 3669 },
+      { "name": "British Columbia", "value": 1014 },
+      { "name": "Alberta", "value": 682 },
+      { "name": "Saskatchewan", "value": 167 },
+      { "name": "Manitoba", "value": 163 },
+      { "name": "Ontario", "value": 1415 },
+      { "name": "Quebec", "value": 152 },
+      { "name": "New Brunswick", "value": 34 },
+      { "name": "Nova Scotia", "value": 34 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": -2 },
+      { "name": "Yukon", "value": 2 },
+      { "name": "Northwest Territories", "value": 6 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2021-01": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 3776 },
+      { "name": "British Columbia", "value": 1071 },
+      { "name": "Alberta", "value": 718 },
+      { "name": "Saskatchewan", "value": 132 },
+      { "name": "Manitoba", "value": 134 },
+      { "name": "Ontario", "value": 1451 },
+      { "name": "Quebec", "value": 198 },
+      { "name": "New Brunswick", "value": 26 },
+      { "name": "Nova Scotia", "value": 23 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": 11 },
+      { "name": "Yukon", "value": 10 },
+      { "name": "Northwest Territories", "value": 2 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2021-04": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 3770 },
+      { "name": "British Columbia", "value": 1058 },
+      { "name": "Alberta", "value": 720 },
+      { "name": "Saskatchewan", "value": 113 },
+      { "name": "Manitoba", "value": 146 },
+      { "name": "Ontario", "value": 1451 },
+      { "name": "Quebec", "value": 226 },
+      { "name": "New Brunswick", "value": 18 },
+      { "name": "Nova Scotia", "value": 16 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": 10 },
+      { "name": "Yukon", "value": 10 },
+      { "name": "Northwest Territories", "value": 2 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2021-07": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 3892 },
+      { "name": "British Columbia", "value": 1105 },
+      { "name": "Alberta", "value": 792 },
+      { "name": "Saskatchewan", "value": 181 },
+      { "name": "Manitoba", "value": 130 },
+      { "name": "Ontario", "value": 1363 },
+      { "name": "Quebec", "value": 254 },
+      { "name": "New Brunswick", "value": 20 },
+      { "name": "Nova Scotia", "value": 11 },
+      { "name": "Prince Edward Island", "value": 12 },
+      { "name": "Newfoundland and Labrador", "value": 12 },
+      { "name": "Yukon", "value": 10 },
+      { "name": "Northwest Territories", "value": 2 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2021-10": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 4268 },
+      { "name": "British Columbia", "value": 1255 },
+      { "name": "Alberta", "value": 994 },
+      { "name": "Saskatchewan", "value": 206 },
+      { "name": "Manitoba", "value": 104 },
+      { "name": "Ontario", "value": 1414 },
+      { "name": "Quebec", "value": 222 },
+      { "name": "New Brunswick", "value": 20 },
+      { "name": "Nova Scotia", "value": 23 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": 14 },
+      { "name": "Yukon", "value": 16 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2022-01": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 3710 },
+      { "name": "British Columbia", "value": 1147 },
+      { "name": "Alberta", "value": 897 },
+      { "name": "Saskatchewan", "value": 69 },
+      { "name": "Manitoba", "value": -4 },
+      { "name": "Ontario", "value": 1281 },
+      { "name": "Quebec", "value": 232 },
+      { "name": "New Brunswick", "value": 18 },
+      { "name": "Nova Scotia", "value": 44 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": -2 },
+      { "name": "Yukon", "value": 20 },
+      { "name": "Northwest Territories", "value": 2 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  },
+  "2022-04": {
+    "name": "Canada",
+    "children": [
+      { "name": "Canada", "value": 3271 },
+      { "name": "British Columbia", "value": 1043 },
+      { "name": "Alberta", "value": 684 },
+      { "name": "Saskatchewan", "value": -4 },
+      { "name": "Manitoba", "value": -4 },
+      { "name": "Ontario", "value": 1229 },
+      { "name": "Quebec", "value": 272 },
+      { "name": "New Brunswick", "value": 12 },
+      { "name": "Nova Scotia", "value": 23 },
+      { "name": "Prince Edward Island", "value": -2 },
+      { "name": "Newfoundland and Labrador", "value": -2 },
+      { "name": "Yukon", "value": 8 },
+      { "name": "Northwest Territories", "value": 0 },
+      { "name": "Nunavut", "value": -2 }
+    ]
+  }
+}
