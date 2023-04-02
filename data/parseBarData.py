@@ -14,7 +14,7 @@ with open('SubstanceHarmsData.csv', 'r') as csv_file:
             continue
         if row['Specific_Measure'] != 'Age group by sex':
             continue
-        if row['Substance'] != 'Opioids':
+        if row['Substance'] != 'Opioids':# and row['Substance'] != 'Stimulants':
             continue
 
         if True:
@@ -51,5 +51,5 @@ with open('SubstanceHarmsData.csv', 'r') as csv_file:
 
 
     # Write the output data to a new json file
-    with open('barData.json', 'w') as output_file:
+    with open('barData2.json', 'w') as output_file:
         json.dump(output_data, output_file)

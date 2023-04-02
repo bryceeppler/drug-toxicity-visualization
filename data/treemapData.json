@@ -2,7 +2,7 @@
   "2016-01": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 1243 },
+
       { "name": "British Columbia", "value": 344 },
       { "name": "Alberta", "value": 255 },
       { "name": "Saskatchewan", "value": 50 },
@@ -21,7 +21,7 @@
   "2016-04": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 1188 },
+
       { "name": "British Columbia", "value": 314 },
       { "name": "Alberta", "value": 270 },
       { "name": "Saskatchewan", "value": 31 },
@@ -40,7 +40,7 @@
   "2016-07": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 1219 },
+
       { "name": "British Columbia", "value": 300 },
       { "name": "Alberta", "value": 303 },
       { "name": "Saskatchewan", "value": 46 },
@@ -59,7 +59,7 @@
   "2016-10": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 1621 },
+
       { "name": "British Columbia", "value": 636 },
       { "name": "Alberta", "value": 321 },
       { "name": "Saskatchewan", "value": 32 },
@@ -78,7 +78,7 @@
   "2017-01": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 1740 },
+
       { "name": "British Columbia", "value": 702 },
       { "name": "Alberta", "value": 314 },
       { "name": "Saskatchewan", "value": 47 },
@@ -97,7 +97,7 @@
   "2017-04": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 1935 },
+
       { "name": "British Columbia", "value": 723 },
       { "name": "Alberta", "value": 343 },
       { "name": "Saskatchewan", "value": 37 },
@@ -116,7 +116,7 @@
   "2017-07": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 2026 },
+
       { "name": "British Columbia", "value": 623 },
       { "name": "Alberta", "value": 354 },
       { "name": "Saskatchewan", "value": 41 },
@@ -135,7 +135,7 @@
   "2017-10": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 1757 },
+
       { "name": "British Columbia", "value": 520 },
       { "name": "Alberta", "value": 416 },
       { "name": "Saskatchewan", "value": 34 },
@@ -154,7 +154,7 @@
   "2018-01": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 1918 },
+
       { "name": "British Columbia", "value": 710 },
       { "name": "Alberta", "value": 387 },
       { "name": "Saskatchewan", "value": 65 },
@@ -173,7 +173,7 @@
   "2018-04": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 1884 },
+
       { "name": "British Columbia", "value": 626 },
       { "name": "Alberta", "value": 412 },
       { "name": "Saskatchewan", "value": 53 },
@@ -192,7 +192,7 @@
   "2018-07": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 2123 },
+
       { "name": "British Columbia", "value": 717 },
       { "name": "Alberta", "value": 417 },
       { "name": "Saskatchewan", "value": 64 },
@@ -211,7 +211,7 @@
   "2018-10": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 2144 },
+
       { "name": "British Columbia", "value": 627 },
       { "name": "Alberta", "value": 388 },
       { "name": "Saskatchewan", "value": 58 },
@@ -230,7 +230,7 @@
   "2019-01": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 2007 },
+
       { "name": "British Columbia", "value": 598 },
       { "name": "Alberta", "value": 323 },
       { "name": "Saskatchewan", "value": 48 },
@@ -249,7 +249,7 @@
   "2019-04": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 2042 },
+
       { "name": "British Columbia", "value": 495 },
       { "name": "Alberta", "value": 370 },
       { "name": "Saskatchewan", "value": 67 },
@@ -268,7 +268,7 @@
   "2019-07": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 1414 },
+
       { "name": "British Columbia", "value": 444 },
       { "name": "Alberta", "value": 303 },
       { "name": "Saskatchewan", "value": 45 },
@@ -287,7 +287,7 @@
   "2019-10": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 1659 },
+
       { "name": "British Columbia", "value": 450 },
       { "name": "Alberta", "value": 249 },
       { "name": "Saskatchewan", "value": 66 },
@@ -306,7 +306,7 @@
   "2020-01": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 2014 },
+
       { "name": "British Columbia", "value": 563 },
       { "name": "Alberta", "value": 314 },
       { "name": "Saskatchewan", "value": 50 },
@@ -325,7 +325,7 @@
   "2020-04": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 3300 },
+
       { "name": "British Columbia", "value": 993 },
       { "name": "Alberta", "value": 631 },
       { "name": "Saskatchewan", "value": 141 },
@@ -344,7 +344,7 @@
   "2020-07": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 3491 },
+
       { "name": "British Columbia", "value": 973 },
       { "name": "Alberta", "value": 715 },
       { "name": "Saskatchewan", "value": 162 },
@@ -363,7 +363,7 @@
   "2020-10": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 3669 },
+
       { "name": "British Columbia", "value": 1014 },
       { "name": "Alberta", "value": 682 },
       { "name": "Saskatchewan", "value": 167 },
@@ -382,7 +382,7 @@
   "2021-01": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 3776 },
+
       { "name": "British Columbia", "value": 1071 },
       { "name": "Alberta", "value": 718 },
       { "name": "Saskatchewan", "value": 132 },
@@ -401,7 +401,7 @@
   "2021-04": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 3770 },
+
       { "name": "British Columbia", "value": 1058 },
       { "name": "Alberta", "value": 720 },
       { "name": "Saskatchewan", "value": 113 },
@@ -420,7 +420,7 @@
   "2021-07": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 3892 },
+
       { "name": "British Columbia", "value": 1105 },
       { "name": "Alberta", "value": 792 },
       { "name": "Saskatchewan", "value": 181 },
@@ -439,7 +439,7 @@
   "2021-10": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 4268 },
+
       { "name": "British Columbia", "value": 1255 },
       { "name": "Alberta", "value": 994 },
       { "name": "Saskatchewan", "value": 206 },
@@ -458,7 +458,7 @@
   "2022-01": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 3710 },
+
       { "name": "British Columbia", "value": 1147 },
       { "name": "Alberta", "value": 897 },
       { "name": "Saskatchewan", "value": 69 },
@@ -477,7 +477,7 @@
   "2022-04": {
     "name": "Canada",
     "children": [
-      { "name": "Canada", "value": 3271 },
+
       { "name": "British Columbia", "value": 1043 },
       { "name": "Alberta", "value": 684 },
       { "name": "Saskatchewan", "value": -4 },
