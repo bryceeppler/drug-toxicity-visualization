@@ -9,7 +9,7 @@
   fill: white;
 }
 
-.tooltip {
+.treemapTooltip {
   position: absolute;
   text-align: center;
   width: 150px;

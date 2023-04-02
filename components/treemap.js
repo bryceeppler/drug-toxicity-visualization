@@ -15,10 +15,10 @@ const treemapSvg = d3
   .select("#treemap")
   .attr("viewBox", [0, 0, treemapWidth, treemapHeight]);
 
-const tooltip = d3
+const treemapTooltip = d3
   .select("body")
   .append("div")
-  .attr("class", "tooltip")
+  .attr("class", "treemapTooltip")
   .style("opacity", 0);
 
 function drawTreemap(date) {
@@ -39,14 +39,14 @@ function drawTreemap(date) {
     .attr("width", (d) => d.x1 - d.x0)
     .attr("height", (d) => d.y1 - d.y0)
     .on("mouseover", (event, d) => {
-      tooltip.transition().duration(200).style("opacity", 0.9);
-      tooltip
+      treemapTooltip.transition().duration(200).style("opacity", 0.9);
+      treemapTooltip
         .html(`${d.parent.data.name} - ${d.data.name}: ${format(d.value)}`)
         .style("left", event.pageX + 10 + "px")
         .style("top", event.pageY - 28 + "px");
     })
     .on("mouseout", (event, d) => {
-      tooltip.transition().duration(500).style("opacity", 0);
+      treemapTooltip.transition().duration(500).style("opacity", 0);
     });
 
   cell

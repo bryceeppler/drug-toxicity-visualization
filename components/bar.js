@@ -1,8 +1,7 @@
-var testyy = "testyy";
-// set the dimensions and margins of the graph
 var margin = { top: 30, right: 140, bottom: 20, left: 50 },
   width = 470 - margin.left - margin.right,
   height = 380 - margin.top - margin.bottom;
+
 const barSvg = d3
   .select("#bar")
   .attr("width", width + margin.left + margin.right)
@@ -12,17 +11,18 @@ const barSvg = d3
 
 var jsonbarData;
 var selectedBarData;
+
 d3.json("data/barData.json")
   .then(function (data) {
     jsonbarData = data;
   })
   .then(function () {
-    drawBar("2020-01", "Canada");
+    drawBar("2016-01", "Canada");
   });
 
 function drawBar(date, province) {
-  var tempYear = date.split("-")[0]
-  
+  var tempYear = date.split("-")[0];
+
   // If there is no data for this year, show nothing
   // we only have 2018 - 2022
   if (tempYear < 2018 || tempYear > 2022) {
@@ -56,16 +56,15 @@ function drawBar(date, province) {
   var maxVal = 0;
   for (let i = 0; i < selectedBarData.length; i++) {
     for (let j = 0; j < subgroups.length; j++) {
-      console.log("subgroups[j]", subgroups[j])
+      console.log("subgroups[j]", subgroups[j]);
       if (parseInt(selectedBarData[i][subgroups[j]]) > maxVal) {
         maxVal = selectedBarData[i][subgroups[j]];
       }
     }
   }
 
-
   maxVal = parseInt(maxVal);
-  maxVal=2000
+  maxVal = 2000;
   const y = d3.scaleLinear().domain([0, maxVal]).range([height, 0]);
   barSvg.append("g").call(d3.axisLeft(y));
 
@@ -109,100 +108,102 @@ function drawBar(date, province) {
         .flat()
     );
 
-// Show the bars with new color scale
-const bars = barSvg
-  .append("g")
-  .selectAll("g")
-  .data(selectedBarData)
-  .join("g")
-  .attr("transform", (d) => `translate(${x(d.group)},0)`);
+  // Show the bars with new color scale
+  const bars = barSvg
+    .append("g")
+    .selectAll("g")
+    .data(selectedBarData)
+    .join("g")
+    .attr("transform", (d) => `translate(${x(d.group)},0)`);
 
-bars
-  .selectAll("rect")
-  .data((d) => subgroups.map((key) => ({ key: key, value: d[key] })))
-  .join("rect")
-  .attr("x", (d) => xSubgroup(d.key))
-  .attr("height", d => height - y(0)) // always equal to 0
-  .attr("y", d => y(0))  .attr("width", xSubgroup.bandwidth())
-  .attr("fill", (d) => color(d))
+  bars
+    .selectAll("rect")
+    .data((d) => subgroups.map((key) => ({ key: key, value: d[key] })))
+    .join("rect")
+    .attr("x", (d) => xSubgroup(d.key))
+    .attr("height", (d) => height - y(0)) // always equal to 0
+    .attr("y", (d) => y(0))
+    .attr("width", xSubgroup.bandwidth())
+    .attr("fill", (d) => color(d));
 
-bars.selectAll("rect").transition().duration(300)
-.attr("y", (d) => y(d.value))
-.attr("height", (d) => height - y(d.value))
-// .delay((d,i) => {console.log(i); return 10})
-// Legend
-const legend = barSvg
-  .append("g")
-  .attr("class", "legend")
-  .attr("transform", `translate(${width - margin.right}, 0)`);
+  bars
+    .selectAll("rect")
+    .transition()
+    .duration(300)
+    .attr("y", (d) => y(d.value))
+    .attr("height", (d) => height - y(d.value));
+  // .delay((d,i) => {console.log(i); return 10})
+  // Legend
+  const legend = barSvg
+    .append("g")
+    .attr("class", "legend")
+    .attr("transform", `translate(${width - margin.right}, 0)`);
 
-const legendData = subgroups.map((d, i) => ({
-  age: d,
-  colorMale: blueRange[i],
-  colorFemale: redRange[i],
-}));
+  const legendData = subgroups.map((d, i) => ({
+    age: d,
+    colorMale: blueRange[i],
+    colorFemale: redRange[i],
+  }));
 
-// Add headers for the legend
-legend
-  .append("text")
-  .attr("x", 0)
-  .attr("y", 0)
-  .text("Age range")
-  .attr("font-size", "12px")
-  .attr("fill", "black");
+  // Add headers for the legend
+  legend
+    .append("text")
+    .attr("x", 0)
+    .attr("y", 0)
+    .text("Age range")
+    .attr("font-size", "12px")
+    .attr("fill", "black");
 
-legend
-  .append("text")
-  .attr("x", 125)
-  .attr("y", 0)
-  .text("Male")
-  .attr("font-size", "12px")
-  .attr("fill", "black");
+  legend
+    .append("text")
+    .attr("x", 125)
+    .attr("y", 0)
+    .text("Male")
+    .attr("font-size", "12px")
+    .attr("fill", "black");
 
-legend
-  .append("text")
-  .attr("x", 180)
-  .attr("y", 0)
-  .text("Female")
-  .attr("font-size", "12px")
-  .attr("fill", "black");
+  legend
+    .append("text")
+    .attr("x", 180)
+    .attr("y", 0)
+    .text("Female")
+    .attr("font-size", "12px")
+    .attr("fill", "black");
 
-// Add age ranges and color squares for male and female
-legend
-  .selectAll("rect.male")
-  .data(legendData)
-  .enter()
-  .append("rect")
-  .attr("class", "male")
-  .attr("x", 125)
-  .attr("y", (d, i) => (i + 1) * 15)
-  .attr("width", 10)
-  .attr("height", 10)
-  .attr("fill", (d) => d.colorMale);
+  // Add age ranges and color squares for male and female
+  legend
+    .selectAll("rect.male")
+    .data(legendData)
+    .enter()
+    .append("rect")
+    .attr("class", "male")
+    .attr("x", 125)
+    .attr("y", (d, i) => (i + 1) * 15)
+    .attr("width", 10)
+    .attr("height", 10)
+    .attr("fill", (d) => d.colorMale);
 
-legend
-  .selectAll("rect.female")
-  .data(legendData)
-  .enter()
-  .append("rect")
-  .attr("class", "female")
-  .attr("x", 180)
-  .attr("y", (d, i) => (i + 1) * 15)
-  .attr("width", 10)
-  .attr("height", 10)
-  .attr("fill", (d) => d.colorFemale);
+  legend
+    .selectAll("rect.female")
+    .data(legendData)
+    .enter()
+    .append("rect")
+    .attr("class", "female")
+    .attr("x", 180)
+    .attr("y", (d, i) => (i + 1) * 15)
+    .attr("width", 10)
+    .attr("height", 10)
+    .attr("fill", (d) => d.colorFemale);
 
-legend
-  .selectAll("text.age")
-  .data(legendData)
-  .enter()
-  .append("text")
-  .attr("class", "age")
-  .attr("x", 0)
-  .attr("y", (d, i) => (i + 1) * 15 + 9)
-  .text((d) => d.age)
-  .attr("font-size", "12px")
-  .attr("fill", "black");
-
+  legend
+    .selectAll("text.age")
+    .data(legendData)
+    .enter()
+    .append("text")
+    .attr("class", "age")
+    .attr("x", 0)
+    .attr("y", (d, i) => (i + 1) * 15 + 9)
+    .text((d) => d.age)
+    .attr("font-size", "12px")
+    .attr("fill", "black");
 }
-
