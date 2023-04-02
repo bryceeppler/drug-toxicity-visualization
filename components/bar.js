@@ -108,6 +108,36 @@ function drawBar(date, province) {
         .flat()
     );
 
+
+
+  // Tooltip
+  const tooltip = d3.select("body")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0)
+    .style("position", "absolute")
+    .style("background-color", "#f9f9f9")
+    .style("border", "1px solid #d3d3d3")
+    .style("border-radius", "4px")
+    .style("padding", "4px")
+    .style("font-size", "12px")
+    .style("pointer-events", "none");
+
+  function showTooltip(event, d) {
+    tooltip
+      .style("opacity", 1)
+      .html(`${d.key}: ${d.value}`)
+      .style("left", event.pageX + 10 + "px")
+      .style("top", event.pageY - 15 + "px");
+  }
+
+  function hideTooltip() {
+    tooltip.style("opacity", 0);
+  }
+
+
+
+
   // Show the bars with new color scale
   const bars = barSvg
     .append("g")
@@ -116,15 +146,17 @@ function drawBar(date, province) {
     .join("g")
     .attr("transform", (d) => `translate(${x(d.group)},0)`);
 
-  bars
+    bars
     .selectAll("rect")
     .data((d) => subgroups.map((key) => ({ key: key, value: d[key] })))
     .join("rect")
     .attr("x", (d) => xSubgroup(d.key))
-    .attr("height", (d) => height - y(0)) // always equal to 0
-    .attr("y", (d) => y(0))
-    .attr("width", xSubgroup.bandwidth())
-    .attr("fill", (d) => color(d));
+    .attr("height", d => height - y(0)) // always equal to 0
+    .attr("y", d => y(0))  .attr("width", xSubgroup.bandwidth())
+    .attr("fill", (d) => color(d))
+    .on("mouseover", showTooltip)
+    .on("mousemove", showTooltip)
+    .on("mouseout", hideTooltip);
 
   bars
     .selectAll("rect")
@@ -206,4 +238,7 @@ function drawBar(date, province) {
     .text((d) => d.age)
     .attr("font-size", "12px")
     .attr("fill", "black");
+
+
+    
 }
