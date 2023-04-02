@@ -81,8 +81,9 @@ function ready() {
     // set the color of each Province
     .attr("fill", function (d) {
       d.total = provinceDataForMap.get(d.properties.name) || 0;
-      return colorScale(d.total);
+      return d.total < 0 ? "lightcoral" : colorScale(d.total);
     })
+    
     .style("stroke", "transparent")
     .attr("class", function (d) {
       return "Province";
@@ -94,32 +95,8 @@ function ready() {
 }
 
 function drawMap(date) {
-  // Update the province data based on the year
-  // if (year >= 2016 && year <= 2018) {
-  //   provinceDataForMap = provinceDataForMap2;
-  // } else if (year >= 2019 && year <= 2022) {
-  //   provinceDataForMap = provinceDataForMap3;
-  // }
-  // convert date to 2014-01-01
-  // let tempYear = date.getFullYear();
-  // let tempMonth = date.getMonth();
-  // // if temp month in is the first quarter, set it to 1
-  // if (tempMonth < 3) {
-  //   tempMonth = 1;
-  // } else if (tempMonth < 6) {
-  //   tempMonth = 4;
-  // } else if (tempMonth < 9) {
-  //   tempMonth = 7;
-  // } else {
-  //   tempMonth = 10;
-  // }
-  // // temp month must have a leading 0 if it is less than 10
-  // let tempYearMonth = tempYear + "-" + (tempMonth < 10 ? "0" : "") + tempMonth;
-  // provinceDataForMap = mapJsonData[date]
   let selectedJsonData = mapJsonData[date];
-  // convert the json data to a map
   provinceDataForMap = new Map(Object.entries(selectedJsonData));
-  // Clear the existing map
   mapSvg.selectAll("path").remove();
 
   // Draw the updated map
@@ -132,8 +109,9 @@ function drawMap(date) {
     // set the color of each Province
     .attr("fill", function (d) {
       d.total = provinceDataForMap.get(d.properties.name) || 0;
-      return colorScale(d.total);
+      return d.total < 0 ? "lightcoral" : colorScale(d.total);
     })
+    
     .style("stroke", "transparent")
     .attr("class", function (d) {
       return "Province";
